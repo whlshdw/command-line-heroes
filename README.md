@@ -1,5 +1,4 @@
----
-description: LCRH - LCTT SIG For CommandLineHeroes
+# LCRH - LCTT SIG For CommandLineHeroes
 
 # README
 
