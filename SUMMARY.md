@@ -1,7 +1,6 @@
 # Table of contents
 
-* [Introduction](README.md)
-* [readme](readme.md)
+* [index](README.md)
 * [《代码英雄》第一季](dai-ma-ying-xiong-di-yi-ji/README.md)
   * [01 操作系统战争-上](dai-ma-ying-xiong-di-yi-ji/01-command-line-heroes-season-1-os-wars-part-1.md)
   * [02 操作系统战争-下-Linux 崛起](dai-ma-ying-xiong-di-yi-ji/02-command-line-heroes-season-1-os-wars-part-2.md)
