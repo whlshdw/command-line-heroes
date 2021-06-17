@@ -1,0 +1,7 @@
+# Mac_Meta 
+.DS_Store
+
+#package
+/sources/
+/script/
+/translated/

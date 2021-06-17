@@ -1,0 +1,906 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>06 Bash Shell 中的英雄 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="07-command-line-heroes-season-3-talking-to-machines.html" />
+    
+    
+    <link rel="prev" href="05-command-line-heroes-season-3-the-infrastructure-effect.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    README
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    《代码英雄》第一季
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../《代码英雄》第一季/01-command-line-heroes-season-1-os-wars-part-1.html">
+            
+                <a href="../《代码英雄》第一季/01-command-line-heroes-season-1-os-wars-part-1.html">
+            
+                    
+                    01 操作系统战争-上
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../《代码英雄》第一季/02-command-line-heroes-season-1-os-wars-part-2.html">
+            
+                <a href="../《代码英雄》第一季/02-command-line-heroes-season-1-os-wars-part-2.html">
+            
+                    
+                    02 操作系统战争-下-Linux 崛起
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../《代码英雄》第一季/03-command-line-heroes-season-1-the-agile-revolution.html">
+            
+                <a href="../《代码英雄》第一季/03-command-line-heroes-season-1-the-agile-revolution.html">
+            
+                    
+                    03 敏捷革命
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../《代码英雄》第一季/04-command-line-heroes-season-1-devops-tear-down-that-wall.html">
+            
+                <a href="../《代码英雄》第一季/04-command-line-heroes-season-1-devops-tear-down-that-wall.html">
+            
+                    
+                    04 DevOps, 拆掉那堵墙
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../《代码英雄》第一季/05-command-line-heroes-season-1-the-containers-derby.html">
+            
+                <a href="../《代码英雄》第一季/05-command-line-heroes-season-1-the-containers-derby.html">
+            
+                    
+                    05 容器竞赛
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../《代码英雄》第一季/06-command-line-heroes-season-1-crack-the-cloud-open.html">
+            
+                <a href="../《代码英雄》第一季/06-command-line-heroes-season-1-crack-the-cloud-open.html">
+            
+                    
+                    06 揭秘云计算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../《代码英雄》第一季/07-command-line-heroes-season-1-days-of-future-open.html">
+            
+                <a href="../《代码英雄》第一季/07-command-line-heroes-season-1-days-of-future-open.html">
+            
+                    
+                    07 开启未来
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    《代码英雄》第二季
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../《代码英雄》第二季/01-command-line-heroes-season-2-press-start.html">
+            
+                <a href="../《代码英雄》第二季/01-command-line-heroes-season-2-press-start.html">
+            
+                    
+                    01 按下启动键
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../《代码英雄》第二季/02-command-line-heroes-season-2-hello-world.html">
+            
+                <a href="../《代码英雄》第二季/02-command-line-heroes-season-2-hello-world.html">
+            
+                    
+                    02 Hello, World
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../《代码英雄》第二季/03-command-line-heroes-season-2-ready-to-commit.html">
+            
+                <a href="../《代码英雄》第二季/03-command-line-heroes-season-2-ready-to-commit.html">
+            
+                    
+                    03 准备提交
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../《代码英雄》第二季/04-command-line-heroes-season-2-fail-better.html">
+            
+                <a href="../《代码英雄》第二季/04-command-line-heroes-season-2-fail-better.html">
+            
+                    
+                    04 更好的失败
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../《代码英雄》第二季/05-command-line-heroes-season-2-the-one-about-devsecops.html">
+            
+                <a href="../《代码英雄》第二季/05-command-line-heroes-season-2-the-one-about-devsecops.html">
+            
+                    
+                    05 关于 DevSecOps 的故事
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../《代码英雄》第二季/06-command-line-heroes-season-2-the-data-explosion.html">
+            
+                <a href="../《代码英雄》第二季/06-command-line-heroes-season-2-the-data-explosion.html">
+            
+                    
+                    06 数据大爆炸
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../《代码英雄》第二季/07-command-line-heroes-season-2-at-your-serverless.html">
+            
+                <a href="../《代码英雄》第二季/07-command-line-heroes-season-2-at-your-serverless.html">
+            
+                    
+                    07 无服务器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../《代码英雄》第二季/08-command-line-heroes-season-2-open-curiosity.html">
+            
+                <a href="../《代码英雄》第二季/08-command-line-heroes-season-2-open-curiosity.html">
+            
+                    
+                    08 开源好奇号
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../《代码英雄》第二季/09-command-line-heroes-season-2-bonus-developer-advocacy-roundtable.html">
+            
+                <a href="../《代码英雄》第二季/09-command-line-heroes-season-2-bonus-developer-advocacy-roundtable.html">
+            
+                    
+                    09 特别篇-开发者推广大使圆桌会议
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    《代码英雄》第三季
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="01-command-line-heroes-season-3-python-s-tale.html">
+            
+                <a href="01-command-line-heroes-season-3-python-s-tale.html">
+            
+                    
+                    01 Python 的故事
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="02-command-line-heroes-season-3-learning-the-basics.html">
+            
+                <a href="02-command-line-heroes-season-3-learning-the-basics.html">
+            
+                    
+                    02 学习 BASIC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="03-command-line-heroes-season-3-creating-javascript.html">
+            
+                <a href="03-command-line-heroes-season-3-creating-javascript.html">
+            
+                    
+                    03 创造 JavaScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="04-command-line-heroes-season-3-diving-for-perl.html">
+            
+                <a href="04-command-line-heroes-season-3-diving-for-perl.html">
+            
+                    
+                    04 深入 Perl 语言的世界
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="05-command-line-heroes-season-3-the-infrastructure-effect.html">
+            
+                <a href="05-command-line-heroes-season-3-the-infrastructure-effect.html">
+            
+                    
+                    05 基础设施的影响
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.6" data-path="06-command-line-heroes-season-3-heroes-in-a-bash-shell.html">
+            
+                <a href="06-command-line-heroes-season-3-heroes-in-a-bash-shell.html">
+            
+                    
+                    06 Bash Shell 中的英雄
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="07-command-line-heroes-season-3-talking-to-machines.html">
+            
+                <a href="07-command-line-heroes-season-3-talking-to-machines.html">
+            
+                    
+                    07 与机器对话
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="08-command-line-heroes-season-3-the-c-change.html">
+            
+                <a href="08-command-line-heroes-season-3-the-c-change.html">
+            
+                    
+                    08 C 语言之巨变
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    《代码英雄》第四季
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../《代码英雄》第四季/01-command-line-heroes-season-4-minicomputers-the-soul-of-an-old-machine.html">
+            
+                <a href="../《代码英雄》第四季/01-command-line-heroes-season-4-minicomputers-the-soul-of-an-old-machine.html">
+            
+                    
+                    01 小型机 —— 旧机器的灵魂
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../《代码英雄》第四季/02-command-line-heroes-season-4-mainframes-the-ge-225.html">
+            
+                <a href="../《代码英雄》第四季/02-command-line-heroes-season-4-mainframes-the-ge-225.html">
+            
+                    
+                    02 大型机 GE-225 和 BASIC 的诞生
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../《代码英雄》第四季/03-command-line-heroes-season-4-personal-computers-the-altair-8800-and-the-dawn-of-a-revolution.html">
+            
+                <a href="../《代码英雄》第四季/03-command-line-heroes-season-4-personal-computers-the-altair-8800-and-the-dawn-of-a-revolution.html">
+            
+                    
+                    03 个人计算机 —— Altair 8800 和革命的曙光
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../《代码英雄》第四季/04-command-line-heroes-season-4-floppies-the-disks-that-changed-the-world.html">
+            
+                <a href="../《代码英雄》第四季/04-command-line-heroes-season-4-floppies-the-disks-that-changed-the-world.html">
+            
+                    
+                    04 软盘 —— 改变世界的磁盘
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >06 Bash Shell 中的英雄</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x300A;&#x4EE3;&#x7801;&#x82F1;&#x96C4;&#x300B;&#x7B2C;&#x4E09;&#x5B63;&#xFF08;6&#xFF09;&#xFF1A;bash-shell-&#x4E2D;&#x7684;&#x82F1;&#x96C4;">&#x300A;&#x4EE3;&#x7801;&#x82F1;&#x96C4;&#x300B;&#x7B2C;&#x4E09;&#x5B63;&#xFF08;6&#xFF09;&#xFF1A;Bash Shell &#x4E2D;&#x7684;&#x82F1;&#x96C4;</h1>
+<blockquote>
+<p>&#x4EE3;&#x7801;&#x82F1;&#x96C4;&#x8BB2;&#x8FF0;&#x4E86;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x3001;&#x7A0B;&#x5E8F;&#x5458;&#x3001;&#x9ED1;&#x5BA2;&#x3001;&#x6781;&#x5BA2;&#x548C;&#x5F00;&#x6E90;&#x53CD;&#x53DB;&#x8005;&#x5982;&#x4F55;&#x5F7B;&#x5E95;&#x6539;&#x53D8;&#x6280;&#x672F;&#x524D;&#x666F;&#x7684;&#x771F;&#x5B9E;&#x53F2;&#x8BD7;&#x3002;</p>
+<p><strong>&#x4EC0;&#x4E48;&#x662F;&#x300A;&#x4EE3;&#x7801;&#x82F1;&#x96C4;&#x300B;</strong></p>
+<p><ruby>&#x4EE3;&#x7801;&#x82F1;&#x96C4;<rt>Command Line Heroes</rt></ruby>&#x662F;&#x4E16;&#x754C;&#x9886;&#x5148;&#x7684;&#x4F01;&#x4E1A;&#x5F00;&#x6E90;&#x8F6F;&#x4EF6;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x4F9B;&#x5E94;&#x5546;&#x7EA2;&#x5E3D;&#xFF08;Red Hat&#xFF09;&#x7CBE;&#x5FC3;&#x5236;&#x4F5C;&#x7684;&#x539F;&#x521B;&#x97F3;&#x9891;&#x64AD;&#x5BA2;&#xFF0C;&#x8BB2;&#x8FF0;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x3001;&#x7A0B;&#x5E8F;&#x5458;&#x3001;&#x9ED1;&#x5BA2;&#x3001;&#x6781;&#x5BA2;&#x548C;&#x5F00;&#x6E90;&#x53CD;&#x53DB;&#x8005;&#x5982;&#x4F55;&#x5F7B;&#x5E95;&#x6539;&#x53D8;&#x6280;&#x672F;&#x524D;&#x666F;&#x7684;&#x771F;&#x5B9E;&#x53F2;&#x8BD7;&#x3002;&#x8BE5;&#x97F3;&#x9891;&#x535A;&#x5BA2;&#x9080;&#x8BF7;&#x5230;&#x4E86;&#x8C37;&#x6B4C;&#x3001;NASA &#x7B49;&#x91CD;&#x91CF;&#x7EA7;&#x4F01;&#x4E1A;&#x7684;&#x4F17;&#x591A;&#x6280;&#x672F;&#x5927;&#x725B;&#x5171;&#x540C;&#x8BB2;&#x8FF0;&#x5F00;&#x6E90;&#x3001;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x3001;&#x5BB9;&#x5668;&#x3001;DevOps&#x3001;&#x6DF7;&#x5408;&#x4E91;&#x7B49;&#x53D1;&#x5C55;&#x8FC7;&#x7A0B;&#x4E2D;&#x7684;&#x52A8;&#x4EBA;&#x6545;&#x4E8B;&#x3002;</p>
+</blockquote>
+<p><img src="https://www.redhat.com/cms/managed-files/clh-s3e6-desktop-1920x1080.png" alt=""></p>
+<p>&#x672C;&#x6587;&#x662F;&#x300A;<a href="https://www.redhat.com/en/command-line-heroes" target="_blank">&#x4EE3;&#x7801;&#x82F1;&#x96C4;</a>&#x300B;&#x7CFB;&#x5217;&#x64AD;&#x5BA2;<a href="https://www.redhat.com/en/command-line-heroes/season-3/heroes-in-a-bash-shell" target="_blank">&#x300A;&#x4EE3;&#x7801;&#x82F1;&#x96C4;&#x300B;&#x7B2C;&#x4E09;&#x5B63;&#xFF08;6&#xFF09;&#xFF1A;Bash Shell &#x4E2D;&#x7684;&#x82F1;&#x96C4;</a>&#x7684;<a href="https://cdn.simplecast.com/audio/a88fbe/a88fbe81-5614-4834-8a78-24c287debbe6/1a66178b-d531-4b54-b217-6c0db423325c/CLH_S3_EP6_Heroes_in_a_Bash_Shell_vFINAL_1_tc.mp3" target="_blank">&#x97F3;&#x9891;</a>&#x811A;&#x672C;&#x3002;</p>
+<blockquote>
+<p>&#x5BFC;&#x8BED;&#xFF1A;Shell &#x4F7F;&#x5F97;&#x5927;&#x89C4;&#x6A21; IT &#x6210;&#x4E3A;&#x53EF;&#x80FD;&#x3002;&#x5B83;&#x4EEC;&#x662F;&#x73B0;&#x4EE3;&#x8BA1;&#x7B97;&#x7684;&#x5FC5;&#x8981;&#x7EC4;&#x6210;&#x90E8;&#x5206;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;<ruby>&#x81EA;&#x7531;&#x8F6F;&#x4EF6;&#x57FA;&#x91D1;&#x4F1A;<rt>Free Software Foundation</rt></ruby>&#x4E00;&#x4F4D;&#x540D;&#x53EB; Brian Fox &#x7684;&#x5F00;&#x53D1;&#x8005;&#x7684;&#x8F9B;&#x52E4;&#x5DE5;&#x4F5C;&#xFF0C;&#x5B83;&#x53EF;&#x80FD;&#x4E0D;&#x4F1A;&#x53D8;&#x6210;&#x8FD9;&#x6837;&#x3002;&#x73B0;&#x5728;&#xFF0C;&#x4E16;&#x754C;&#x4E0A;&#x51E0;&#x4E4E;&#x6BCF;&#x53F0;&#x7535;&#x8111;&#x90FD;&#x6709; Bash shell&#x3002;</p>
+<p>&#x5728;&#x4E0A;&#x4E16;&#x7EAA; 70 &#x5E74;&#x4EE3;&#xFF0C;<ruby>&#x8D1D;&#x5C14;&#x5B9E;&#x9A8C;&#x5BA4;<rt>Bell Labs</rt></ruby>&#x5E0C;&#x671B;&#x5C06;&#x91CD;&#x590D;&#x7684;&#x3001;&#x590D;&#x6742;&#x7684;&#x547D;&#x4EE4;&#x5E8F;&#x5217;&#x81EA;&#x52A8;&#x5316;&#x3002;Chet Ramey &#x63CF;&#x8FF0;&#x4E86;&#x8D1D;&#x5C14;&#x5B9E;&#x9A8C;&#x5BA4;&#x662F;&#x5982;&#x4F55;&#x5F00;&#x53D1;&#x51FA;&#x51E0;&#x4E2A; shell &#x7684; &#x2014;&#x2014; &#x4F46; UNIX &#x53EA;&#x80FD;&#x6709;&#x4E00;&#x4E2A;&#x5B98;&#x65B9;&#x652F;&#x6301;&#x7684; shell&#x3002;&#x83B7;&#x9009;&#x7684;&#x662F; Bourne shell&#x3002;&#x5C3D;&#x7BA1; Bourne shell &#x662F;&#x8FD9;&#x4E9B;&#x4E4B;&#x4E2D;&#x6700;&#x597D;&#x7684;&#x4E00;&#x4E2A; shell&#xFF0C;&#x4F46;&#x5B83;&#x4E5F;&#x6709;&#x5176;&#x5C40;&#x9650;&#x6027;&#x3002;&#x800C;&#x4E14;&#x5B83;&#x53EA;&#x6709;&#x5728;&#x53D7;&#x5230;&#x9650;&#x5236;&#x7684; UNIX &#x8BB8;&#x53EF;&#x8BC1;&#x4E0B;&#x624D;&#x80FD;&#x4F7F;&#x7528;&#x3002;Brian J. Fox &#x8BB2;&#x8FF0;&#x4E86;&#x4ED6;&#x5728;&#x81EA;&#x7531;&#x8F6F;&#x4EF6;&#x57FA;&#x91D1;&#x4F1A;&#x7684;&#x5DE5;&#x4F5C;&#xFF0C;&#x4ED6;&#x9700;&#x8981;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x81EA;&#x7531;&#x7684; Bourne shell &#x7248;&#x672C;&#x3002;&#x5B83;&#x5FC5;&#x987B;&#x517C;&#x5BB9;&#x4F46;&#x4E0D;&#x4F7F;&#x7528;&#x4EFB;&#x4F55;&#x539F;&#x59CB;&#x6E90;&#x4EE3;&#x7801;&#x7684;&#x5143;&#x7D20;&#x3002;&#x8FD9;&#x4E2A; Bourne-Again Shell&#xFF0C;&#x5373; Bash&#xFF0C;&#x53EF;&#x80FD;&#x662F;&#x8FD9;&#x4E2A;&#x661F;&#x7403;&#x4E0A;&#x4F7F;&#x7528;&#x6700;&#x5E7F;&#x6CDB;&#x7684;&#x8F6F;&#x4EF6;&#x3002;&#x800C; Taz Brown &#x63CF;&#x8FF0;&#x4E86;&#x5B83;&#x662F;&#x5982;&#x4F55;&#x6210;&#x4E3A;&#x4E00;&#x4E2A;&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x5B66;&#x4E60;&#x4F7F;&#x7528;&#x7684;&#x6700;&#x91CD;&#x8981;&#x7684;&#x5DE5;&#x5177;&#x4E4B;&#x4E00;&#x3002;</p>
+</blockquote>
+<p><strong>00:00:07 - Saron Yitbarek</strong>&#xFF1A;</p>
+<p>&#x90A3;&#x662F; 1987 &#x5E74;&#x3002;&#x91CC;&#x6839;&#x603B;&#x7EDF;&#x6CBB;&#x4E0B;&#x7684;&#x7F8E;&#x56FD;&#x6B63;&#x84EC;&#x52C3;&#x53D1;&#x5C55;&#xFF0C;&#x4E00;&#x4E2A;&#x6000;&#x63E3;&#x8FDC;&#x5927;&#x68A6;&#x60F3;&#x7684;&#x4EBA;&#x6B63;&#x9A71;&#x8F66;&#x524D;&#x5F80;&#x4ED6;&#x4F4D;&#x4E8E;<ruby>&#x5723;&#x5DF4;&#x5DF4;&#x62C9;<rt>Santa Barbara</rt></ruby>&#x7684;&#x65B0;&#x5BB6;&#x3002;&#x8FD9;&#x4E2A;&#x4EBA;&#x540D;&#x53EB; Brian Fox&#xFF0C;27 &#x5C81;&#xFF0C;&#x662F;&#x9AD8;&#x4E2D;&#x8F8D;&#x5B66;&#x751F;&#x3002;&#x5728;&#x4ED6;&#x8F66;&#x7684;&#x540E;&#x5907;&#x7BB1;&#x91CC;&#xFF0C;&#x6709;&#x4E24;&#x76D2;&#x5DE8;&#x5927;&#x7684;&#x78C1;&#x5E26;&#xFF0C;&#x91CC;&#x9762;&#x8F7D;&#x6EE1;&#x4E86;&#x4ED6;&#x5F53;&#x65F6;&#x6B63;&#x5728;&#x7F16;&#x5199;&#x7684;&#x4EE3;&#x7801;&#x3002;</p>
+<p><strong>00:00:28</strong>&#xFF1A;</p>
+<p>Fox &#x591A;&#x5E74;&#x6765;&#x4E00;&#x76F4;&#x4EE5;&#x7A0B;&#x5E8F;&#x5458;&#x7684;&#x8EAB;&#x4EFD;&#x5DE5;&#x4F5C;&#x5728;&#x6240;&#x8C13;&#x7684;&#x81EA;&#x7531;&#x8F6F;&#x4EF6;&#x8FD0;&#x52A8;&#x4E2D;&#x3002;&#x4ED6;&#x76F8;&#x4FE1;&#x4ED6;&#x9501;&#x5728;&#x8FD9;&#x4E2A;&#x540E;&#x5907;&#x7BB1;&#x91CC;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x53EF;&#x4EE5;&#x5E26;&#x6765;&#x4E00;&#x573A;&#x9769;&#x547D;&#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x79CD;&#x5168;&#x65B0;&#x7684;&#x8F6F;&#x4EF6;&#x8303;&#x4F8B;&#x3002;&#x4ED6;&#x7684;&#x793E;&#x533A;&#x6B63;&#x5728;&#x4E00;&#x70B9;&#x4E00;&#x70B9;&#x5730;&#x4F7F;&#x4E4B;&#x6210;&#x4E3A;&#x73B0;&#x5B9E;&#x3002;</p>
+<p><strong>00:00:49</strong>&#xFF1A;</p>
+<p>&#x90A3;&#x5E74;&#xFF0C;<ruby>&#x7406;&#x67E5;&#x5FB7;&#x2022;&#x65AF;&#x6258;&#x66FC;<rt>Richard Stallman</rt></ruby>&#xFF08;RMS&#xFF09;&#x7684;<ruby>&#x81EA;&#x7531;&#x8F6F;&#x4EF6;&#x57FA;&#x91D1;&#x4F1A;<rt>Free Software Foundation</rt></ruby>&#x7684;&#x4E00;&#x7EC4;&#x7A0B;&#x5E8F;&#x5458;&#xFF0C;&#x6B63;&#x5728;&#x60F3;&#x5C3D;&#x529E;&#x6CD5;&#x7ED9;&#x8BA1;&#x7B97;&#x673A;&#x754C;&#x5E26;&#x6765;&#x81EA;&#x7531;&#x3002;&#x4ED6;&#x4EEC;&#x60F3;&#x8981;&#x6784;&#x5EFA;&#x4E00;&#x4E2A; UNIX &#x7684;&#x66FF;&#x4EE3;&#x54C1;&#xFF0C;&#x4EE5;&#x53D6;&#x4EE3;&#x81EA;&#x4ECE; 70 &#x5E74;&#x4EE3;&#x4EE5;&#x6765;&#x5C31;&#x4E3B;&#x5BFC;&#x7F16;&#x7A0B;&#x7684; UNIX &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x3002;&#x4ED6;&#x4EEC;&#x7684; GNU&#xFF08;&#x8868;&#x793A; GNU&apos;s not UNIX&#xFF09;&#x5C06;&#x6210;&#x4E3A;&#x516C;&#x4F17;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF0C;&#x4EFB;&#x4F55;&#x4EBA;&#x90FD;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5B83;&#xFF0C;&#x65E0;&#x9700;&#x62C5;&#x5FC3;&#x8BB8;&#x53EF;&#x8D39;&#x7528;&#x6216;&#x7248;&#x6743;&#x95EE;&#x9898;&#x3002;</p>
+<p><strong>00:01:18</strong>&#xFF1A;</p>
+<p>&#x591A;&#x5E74;&#x4EE5;&#x6765;&#xFF0C;&#x57FA;&#x91D1;&#x4F1A;&#x4E00;&#x76F4;&#x5728;&#x52AA;&#x529B;&#x5236;&#x9020;&#x8FD9;&#x4E2A;&#x5D2D;&#x65B0;&#x7684;&#x7CFB;&#x7EDF;&#x3002;&#x90A3;&#x4E48; Brian Fox &#x6C7D;&#x8F66;&#x540E;&#x5907;&#x7BB1;&#x91CC;&#x7684;&#x90A3;&#x4E24;&#x76D2;&#x88C5;&#x7740;&#x4EE3;&#x7801;&#x7684;&#x5DE8;&#x578B;&#x78C1;&#x5E26;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;&#x5B83;&#x4EEC;&#x5B58;&#x50A8;&#x7740;&#x8FD9;&#x4E2A;&#x7CFB;&#x7EDF;&#x4E00;&#x4E2A;&#x81F3;&#x5173;&#x91CD;&#x8981;&#x7684;&#x7EC4;&#x6210;&#x90E8;&#x5206;&#x3002;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x81EA;&#x7531;&#x7684;&#xFF0C;&#x800C;&#x4E14;&#x53EF;&#x66F4;&#x6539;&#x7684; shell&#xFF0C;&#x5B83;&#x80FD;&#x591F;&#x4F7F; GNU &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x53D8;&#x5F97;&#x5B8C;&#x6574;&#x3002;&#x8FD9;&#x662F; Brian Fox &#x9001;&#x7ED9;&#x81EA;&#x7531;&#x8F6F;&#x4EF6;&#x8FD0;&#x52A8;&#x7684;&#x793C;&#x7269;&#x3002;&#x4ED6;&#x79F0;&#x4E4B;&#x4E3A; Bash&#x3002;</p>
+<p><strong>00:01:46</strong>&#xFF1A;</p>
+<p>&#x6211;&#x662F; Saron Yitbarek&#xFF0C;&#x8FD9;&#x91CC;&#x662F;<ruby>&#x4EE3;&#x7801;&#x82F1;&#x96C4;<rt>Command Line Heroes</rt></ruby>&#xFF0C;&#x4E00;&#x6863;&#x6765;&#x81EA;<ruby>&#x7EA2;&#x5E3D;<rt>Red Hat</rt></ruby>&#x7684;&#x539F;&#x521B;&#x64AD;&#x5BA2;&#x8282;&#x76EE;&#x3002;&#x5728;&#x8FD9;&#x4E00;&#x96C6;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x6765;&#x770B;&#x770B; Bash shell &#x4E2D;&#x7684;&#x82F1;&#x96C4;&#x4EEC;&#x3002;&#x6211;&#x4EEC;&#x5C06;&#x63A2;&#x7D22; shell &#x7684;&#x5386;&#x53F2;&#xFF0C;&#x4EE5;&#x53CA;&#x5B83;&#x4EEC;&#x4E3A;&#x4EC0;&#x4E48;&#x5BF9;&#x6211;&#x4EEC;&#x5982;&#x4ECA;&#x7684;&#x5DE5;&#x4F5C;&#x5982;&#x6B64;&#x91CD;&#x8981;&#x3002;&#x5927;&#x5BB6;&#x53EF;&#x4EE5;&#x5C06; shell &#x770B;&#x4F5C;&#x8981;&#x7ED9;&#x6F14;&#x5458;&#x7684;&#x5267;&#x672C;&#x3002;&#x5B83;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x5B8C;&#x6574;&#x7684;&#x547D;&#x4EE4;&#x5E8F;&#x5217;&#xFF0C;&#x7136;&#x540E; shell &#x53EF;&#x4EE5;&#x5FEB;&#x901F;&#x5730;&#x8FD0;&#x884C;&#xFF0C;&#x5C31;&#x50CF;&#x6F14;&#x5458;&#x53EF;&#x4EE5;&#x4E00;&#x884C;&#x63A5;&#x4E00;&#x884C;&#x5730;&#x8BFB;&#x5979;&#x7684;&#x53F0;&#x8BCD;&#x4E00;&#x6837;&#x3002;&#x8FD9;&#x662F;&#x5BF9;&#x4E8E;&#x5B9E;&#x73B0;&#x91CD;&#x590D;&#x4E14;&#x590D;&#x6742;&#x7684;&#x4EE3;&#x7801;&#x7684;&#xFF0C;&#x662F;&#x6700;&#x7EC8;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF0C;&#x4E5F;&#x662F;&#x81EA;&#x52A8;&#x5316;&#x7684;&#x5173;&#x952E;&#x3002;&#x4F60;&#x53EF;&#x80FD;&#x4F1A;&#x8BF4;&#xFF0C;shell &#x811A;&#x672C;&#x662F;&#x6211;&#x4EEC;&#x5F00;&#x53D1;&#x7684;&#x4E00;&#x5927;&#x52A9;&#x529B;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x7F16;&#x5199;&#x4E00;&#x4E2A;&#xFF0C;&#x80FD;&#x7ED9;&#x6240;&#x6709;&#x4EBA;&#x5E26;&#x6765;&#x5E2E;&#x52A9;&#x7684; shell&#xFF1F;&#x8FD9;&#x5C31;&#x662F;&#x6311;&#x6218;&#x6240;&#x5728;&#x3002;</p>
+<blockquote>
+<p><strong>00:02:38 - Ken Thompson</strong>&#xFF1A;</p>
+<p>&#x8BA9;&#x6211;&#x4EEC;&#x56DE;&#x5230; 1969 &#x5E74;&#x3002;&#x90A3;&#x65F6;&#x5019;&#x8D1D;&#x5C14;&#x5B9E;&#x9A8C;&#x5BA4;&#x7684;&#x51E0;&#x4F4D;&#x8BA1;&#x7B97;&#x673A;&#x79D1;&#x5B66;&#x5BB6;&#xFF0C;&#x6B63;&#x5728;&#x6839;&#x636E;&#x81EA;&#x5DF1;&#x7684;&#x9700;&#x6C42;&#x5F00;&#x53D1;&#x7A0B;&#x5E8F;&#x3002;</p>
+</blockquote>
+<p><strong>00:02:48 - Saron Yitbarek</strong>&#xFF1A;</p>
+<p>&#x8FD9;&#x4F4D;&#x662F;&#x4EE3;&#x7801;&#x82F1;&#x96C4;&#x5148;&#x9A71; Ken Thompson&#x3002;&#x7531;&#x8D1D;&#x5C14;&#x5B9E;&#x9A8C;&#x5BA4;&#x8BBE;&#x8BA1;&#x7684; UNIX &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF0C;&#x5728;&#x4E00;&#x5F00;&#x59CB;&#x786E;&#x5B9E;&#x662F;&#x4F9B;&#x4ED6;&#x4EEC;&#x4E2A;&#x4EBA;&#x4F7F;&#x7528;&#x7684;&#x3002;&#x6700;&#x521D;&#xFF0C;&#x5B83;&#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x5185;&#x90E8;&#x7CFB;&#x7EDF;&#x3002;UNIX &#x9F13;&#x52B1;&#x7A0B;&#x5E8F;&#x5458;&#x4E4B;&#x95F4;&#x8FDB;&#x884C;&#x5BC6;&#x5207;&#x7684;&#x4EA4;&#x6D41;&#xFF0C;&#x4E0D;&#x8FC7;&#x76EE;&#x7684;&#x5E76;&#x4E0D;&#x662F;&#x8981;&#x6539;&#x53D8;&#x6574;&#x4E2A;&#x4E16;&#x754C;&#xFF0C;&#x800C;&#x662F;&#x6539;&#x53D8;&#x8D1D;&#x5C14;&#x5B9E;&#x9A8C;&#x5BA4;&#x3002;</p>
+<blockquote>
+<p><strong>00:03:13 - Ken Thompson</strong>&#xFF1A;</p>
+<p>&#x5230;&#x73B0;&#x5728;&#xFF0C;&#x51E0;&#x4E4E;&#x6574;&#x4E2A;&#x8D1D;&#x5C14;&#x5B9E;&#x9A8C;&#x5BA4;&#x90FD;&#x5728;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x7CFB;&#x7EDF;&#x3002;&#x6211;&#x4EEC;&#x516C;&#x53F8;&#x62E5;&#x6709;&#x8FD1;&#x4E24;&#x4E07;&#x4E2A;&#x8BA1;&#x7B97;&#x673A;&#x7EC8;&#x7AEF;&#xFF0C;&#x5176;&#x4E2D;&#x5927;&#x591A;&#x6570;&#x4F7F;&#x7528; UNIX &#x7CFB;&#x7EDF;&#x3002;</p>
+</blockquote>
+<p><strong>00:03:25 - Saron Yitbarek</strong>&#xFF1A;</p>
+<p>&#x4E00;&#x6B3E;&#x7531; Ken Thompson &#x6240;&#x8BBE;&#x8BA1;&#x7684; UNIX shell &#x5728; 1971 &#x5E74;&#x53D1;&#x5E03;&#x3002; &#x867D;&#x7136; Thompson shell &#x88AB;&#x8BBE;&#x8BA1;&#x4E3A;&#x547D;&#x4EE4;&#x884C;&#x89E3;&#x91CA;&#x5668;&#xFF0C;&#x4F46;&#x662F;&#x5B83;&#x5374;&#x4E0D;&#x80FD;&#x5F88;&#x597D;&#x5730;&#x652F;&#x6301;&#x811A;&#x672C;&#x3002;&#x6240;&#x4EE5;&#x76F4;&#x5230;&#x516D;&#x5E74;&#x540E;&#x7684; 1977 &#x5E74;&#xFF0C;&#x811A;&#x672C;&#x624D;&#x5F00;&#x59CB;&#x5174;&#x8D77;&#x3002;</p>
+<p><strong>00:03:44 - Chet Ramey</strong>&#xFF1A;</p>
+<p>Shell &#x53C2;&#x6570;&#x3001;&#x7279;&#x6B8A;&#x53C2;&#x6570;&#x4EE5;&#x53CA;&#x6211;&#x4EEC;&#x5982;&#x4ECA;&#x8BA4;&#x4E3A;&#x7406;&#x6240;&#x5F53;&#x7136;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x8D77;&#x6E90;&#x4E8E; Steve Bourne &#x548C; Bourne shell&#x3002;</p>
+<p><strong>00:03:57 - Saron Yitbarek</strong>&#xFF1A;</p>
+<p>&#x8FD9;&#x4F4D;&#x662F; Chet Ramey&#xFF0C;Case Western Reserve &#x5927;&#x5B66;&#x7684; IT &#x67B6;&#x6784;&#x5E08;&#x3002;Chet &#x81F4;&#x529B;&#x4E8E;&#x7EF4;&#x62A4; Bash&#xFF0C;&#x4ED6;&#x4E5F;&#x4E3A;&#x6211;&#x4EEC;&#x8BB2;&#x8FF0;&#x4E86;&#x8BB8;&#x591A; Bash &#x7684;&#x8D77;&#x6E90;&#x6545;&#x4E8B;&#x3002;&#x4ED6;&#x63CF;&#x8FF0;&#x4E86;&#x8D1D;&#x5C14;&#x5B9E;&#x9A8C;&#x5BA4;&#x5F53;&#x65F6;&#x7814;&#x7A76; UNIX shell &#x6837;&#x5B50;&#x65F6;&#x7684;&#x60C5;&#x666F;&#x3002;</p>
+<p><strong>00:04:13 - Chet Ramey</strong>&#xFF1A;</p>
+<p>&#x6211;&#x4EEC;&#x5982;&#x4ECA;&#x4F7F;&#x7528;&#x7684;&#x7F16;&#x7A0B;&#x7ED3;&#x6784;&#x8D77;&#x6E90;&#x4E8E; Steve Bourne&#xFF0C;&#x4ED6;&#x7684; shell &#x8D62;&#x5F97;&#x4E86;&#x8FD9;&#x573A;&#x6BD4;&#x8D5B;&#x3002;&#x5F53;&#x65F6;&#x6709;&#x5927;&#x91CF;&#x4F7F;&#x7528; Mashey shell &#x7684;&#x7528;&#x6237;&#x793E;&#x533A;&#xFF0C;&#x4E5F;&#x6709;&#x5927;&#x91CF;&#x7528;&#x6237;&#x5F00;&#x59CB;&#x4F7F;&#x7528; Bourne shell&#x3002;&#x90A3;&#x65F6;&#x5019;&#x6210;&#x7ACB;&#x4E86;&#x4E00;&#x4E2A;&#x59D4;&#x5458;&#x4F1A;&#x6765;&#x51B3;&#x5B9A;&#x54EA;&#x4E00;&#x4E2A;&#x5C06;&#x4F1A;&#x83B7;&#x80DC;&#xFF0C;&#x54EA;&#x4E00;&#x4E2A;&#x5C06;&#x4F1A;&#x6210;&#x4E3A;&#x4ECE;&#x90A3;&#x65F6;&#x5019;&#x8D77;&#x5F97;&#x5230;&#x5B98;&#x65B9;&#x652F;&#x6301;&#x7684; UNIX shell&#xFF0C; Bourne &#x7684; shell &#x8D62;&#x4E86;&#x3002;&#x800C;&#x5176;&#x4ED6;&#x7684; shell&#xFF0C;&#x6B63;&#x5982;&#x4ED6;&#x4EEC;&#x6240;&#x8BF4;&#xFF0C;&#x6210;&#x4E3A;&#x4E86;&#x5386;&#x53F2;&#x3002;</p>
+<p><strong>00:04:54 - Saron Yitbarek</strong>&#xFF1A;</p>
+<p>&#x4E0D;&#x8FC7;&#xFF0C;&#x8FD9;&#x8FD8;&#x4E0D;&#x662F;&#x5386;&#x53F2;&#x7684;&#x7EC8;&#x7ED3;&#x3002;&#x5F53;&#x7136;&#xFF0C;Bourne shell &#x662F;&#x4E00;&#x4E2A;&#x5DE8;&#x5927;&#x7684;&#x98DE;&#x8DC3;&#x3002;&#x5B83;&#x6253;&#x5F00;&#x4E86;&#x4E00;&#x6247;&#x901A;&#x5411;&#x66F4;&#x9AD8;&#x81EA;&#x52A8;&#x5316;&#x6C34;&#x5E73;&#x7684;&#x5927;&#x95E8;&#x3002;&#x4F46;&#x662F;&#x5C3D;&#x7BA1;&#x6709;&#x4E00;&#x6BB5;&#x65F6;&#x95F4; Bourne &#x5360;&#x636E;&#x4E86;&#x4E0A;&#x98CE;&#xFF0C;&#x4F46;&#x662F; Bourne shell &#x5E76;&#x4E0D;&#x80FD;&#x89E3;&#x51B3;&#x6211;&#x4EEC;&#x6240;&#x6709;&#x7684;&#x811A;&#x672C;&#x9700;&#x6C42;&#x3002;</p>
+<p><strong>00:05:14 - Chet Ramey</strong>&#xFF1A;</p>
+<p>Bourne &#x64B0;&#x5199;&#x81EA;&#x5DF1;&#x7684; shell &#x65F6;&#x6240;&#x53D7;&#x5230;&#x7684;&#x9650;&#x5236;&#xFF0C;&#x51E0;&#x4E4E;&#x662F;&#x73B0;&#x5728;&#x7684;&#x4F60;&#x6211;&#x96BE;&#x4EE5;&#x60F3;&#x8C61;&#x7684;&#x3002;&#x663E;&#x7136;&#xFF0C;&#x5F53;&#x4F60;&#x9047;&#x5230;&#x8FD9;&#x4E9B;&#x9650;&#x5236;&#x65F6;&#xFF0C;&#x4F60;&#x4E0D;&#x5F97;&#x4E0D;&#x653E;&#x5F03;&#x5F88;&#x591A;&#x4E1C;&#x897F;&#xFF0C;Bourne &#x5C31;&#x653E;&#x5F03;&#x4E86;&#x5F88;&#x591A;&#x3002;&#x8003;&#x8651;&#x5230;&#x4ED6;&#x6240;&#x5904;&#x7406;&#x7684;&#x7A7A;&#x95F4;&#x3001;&#x5185;&#x5B58;&#x548C; CPU &#x9650;&#x5236;&#xFF0C;&#x4ED6;&#x80FD;&#x591F;&#x8BA9; Bourne shell &#x5305;&#x542B;&#x90A3;&#x4E48;&#x591A;&#x4E1C;&#x897F;&#xFF0C;&#x8FD9;&#x76F8;&#x5F53;&#x4E86;&#x4E0D;&#x8D77;&#x3002;</p>
+<p><strong>00:05:42 - Saron Yitbarek</strong>&#xFF1A;</p>
+<p>&#x8BF7;&#x8BB0;&#x4F4F;&#xFF0C;Bourne shell &#x4ECD;&#x7136;&#x662F;&#x8D1D;&#x5C14;&#x5B9E;&#x9A8C;&#x5BA4; UNIX &#x7CFB;&#x7EDF;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x3002;&#x5B83;&#x4ECD;&#x7136;&#x4E0E; UNIX &#x8BB8;&#x53EF;&#x8BC1;&#x7ED1;&#x5B9A;&#x3002;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x5B83;&#x4E0D;&#x662F;&#x81EA;&#x7531;&#x7684;&#xFF0C;&#x4E0D;&#x662F;&#x5F00;&#x653E;&#x7684;&#x3002;&#x8FD9;&#x6B3E; shell &#x662F;&#x79C1;&#x6709;&#x7684;&#x3002;</p>
+<p><strong>00:05:55 - Chet Ramey</strong>&#xFF1A;</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x4E0D;&#x5728;&#x5927;&#x5B66;&#x91CC;&#xFF0C;&#x83B7;&#x53D6; UNIX &#x6E90;&#x7801;&#x5C06;&#x4F1A;&#x975E;&#x5E38;&#x56F0;&#x96BE;&#x3002;&#x663E;&#x7136;&#xFF0C;&#x8FD9;&#x5BF9; Berkeley UNIX &#x7684;&#x666E;&#x53CA;&#x4EA7;&#x751F;&#x4E86;&#x5F71;&#x54CD;&#x3002;Berkeley UNIX &#x59CB;&#x4E8E;&#x5927;&#x5B66;&#x4E2D;&#xFF0C;&#x5728;&#x5927;&#x5B66;&#x793E;&#x533A;&#x4E2D;&#x6210;&#x957F;&#xFF0C;&#x5E76;&#x8D70;&#x4E86;&#x4E00;&#x6761;&#x963B;&#x529B;&#x6700;&#x5C0F;&#x7684;&#x9053;&#x8DEF;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x5728;&#x6B63;&#x786E;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x8BBF;&#x95EE;&#x5230; Bourne shell &#x7684;&#x6E90;&#x7801;&#x5E76;&#x4E0D;&#x56F0;&#x96BE;&#xFF0C;&#x4F46;&#x662F;&#x603B;&#x7684;&#x6765;&#x8BF4;&#xFF0C;&#x8FD9;&#x5E76;&#x4E0D;&#x662F;&#x5927;&#x4F17;&#x90FD;&#x80FD;&#x591F;&#x8BA4;&#x53EF;&#x7684;&#x65B9;&#x6848;&#x3002;</p>
+<p><strong>00:06:36 - Saron Yitbarek</strong>&#xFF1A;</p>
+<p>Chet Ramey &#x662F; Bash shell &#x7684;&#x7EF4;&#x62A4;&#x8005;&#x3002;</p>
+<p><strong>00:06:41</strong>&#xFF1A;</p>
+<p>&#x56E0;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x6709;&#x4E86; shell &#x7684;&#x96CF;&#x5F62;&#xFF0C;&#x53EF;&#x4EE5;&#x7740;&#x624B;&#x5199;&#x8FD9;&#x4E9B;&#x5173;&#x952E;&#x7684;&#x7EC4;&#x6210;&#x90E8;&#x5206;&#xFF0C;&#x4F46;&#x662F;&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#xFF0C;&#x6700;&#x597D;&#x7684; shell &#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#x5374;&#x6709;&#x4E2A;&#x5927;&#x5927;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x5B83;&#x662F;&#x95ED;&#x6E90;&#x7684;&#x3002;&#x5BF9;&#x4E8E;&#x7406;&#x67E5;&#x5FB7;&#x2022;&#x65AF;&#x6258;&#x66FC;&#x548C;&#x4ED6;&#x7684;&#x81EA;&#x7531;&#x8F6F;&#x4EF6;&#x57FA;&#x91D1;&#x4F1A;&#x800C;&#x8A00;&#xFF0C;&#x8FD9;&#x662F;&#x7EDD;&#x5BF9;&#x65E0;&#x6CD5;&#x63A5;&#x53D7;&#x7684;&#x4E8B;&#x60C5;&#x3002;&#x6211;&#x4EEC;&#x6240;&#x9700;&#x8981;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x4E0D;&#x4E0E;&#x4EFB;&#x4F55;&#x516C;&#x53F8;&#x7ED1;&#x5B9A;&#x7684; shell&#xFF0C;&#x4E00;&#x4E2A;&#x9762;&#x5411;&#x6240;&#x6709;&#x4EBA;&#x7684; shell&#x3002;</p>
+<p><strong>00:07:05</strong>&#xFF1A;</p>
+<p>&#x4F46;&#x8FD9;&#x5C31;&#x5E26;&#x6765;&#x4E86;&#x95EE;&#x9898;&#x3002;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7F16;&#x5199;&#x67D0;&#x79CD;&#xFF0C;&#x80FD;&#x505A;&#x5230; Bourne shell &#x6240;&#x80FD;&#x505A;&#x5230;&#x7684;&#x4E00;&#x5207;&#xFF0C;&#x800C;&#x53C8;&#x4E0D;&#x4F1A;&#x4FB5;&#x72AF;&#x5230;&#x7248;&#x6743;&#x7684;&#x4E1C;&#x897F;&#x3002;&#x5982;&#x679C;&#x9010;&#x5B57;&#x590D;&#x5236; Bourne shell &#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x4F60;&#x4F1A;&#x88AB;&#x8D77;&#x8BC9;&#x3002;</p>
+<p><strong>00:07:20</strong>&#xFF1A;</p>
+<p>&#x4E3A;&#x4E86;&#x4F7F;&#x4EBA;&#x4EEC;&#x6446;&#x8131; Bourne shell &#x7684;&#x675F;&#x7F1A;&#xFF0C;&#x4F60;&#x5FC5;&#x987B;&#x627E;&#x5230;&#x4E00;&#x4F4D;&#x80FD;&#x5728;&#x6CA1;&#x770B;&#x8FC7; Bourne shell &#x4EFB;&#x4F55;&#x6E90;&#x4EE3;&#x7801;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x7F16;&#x5199;&#x8FD9;&#x6B3E;&#x590D;&#x6742;&#x7A0B;&#x5E8F;&#x7684;&#x7A0B;&#x5E8F;&#x5458;&#x3002;&#x4F60;&#x5FC5;&#x987B;&#x627E;&#x5230;&#x8FD9;&#x6837;&#x7684;&#x4E00;&#x4F4D;&#x5C40;&#x5916;&#x4EBA;&#x5929;&#x624D;&#x3002;&#x800C;&#x7406;&#x67E5;&#x5FB7;&#x2022;&#x65AF;&#x6258;&#x66FC;&#x627E;&#x5230;&#x4E86;&#x5B8C;&#x6210;&#x8FD9;&#x9879;&#x5DE5;&#x4F5C;&#x7684;&#x7A0B;&#x5E8F;&#x5458;&#x3002;</p>
+<p><strong>00:07:46</strong>&#xFF1A;</p>
+<p>Brian Fox &#x662F;&#x4E00;&#x540D; 20 &#x6765;&#x5C81;&#x7684;&#x9AD8;&#x4E2D;&#x8F8D;&#x5B66;&#x751F;&#xFF0C;&#x6BD4;&#x8D1D;&#x5C14;&#x5B9E;&#x9A8C;&#x5BA4;&#x7684;&#x5927;&#x591A;&#x6570;&#x4EBA;&#x66F4;&#x61C2;&#x4EE3;&#x7801;&#x3002;&#x4ED6;&#x4ECE;&#x6765;&#x6CA1;&#x6709;&#x89C1;&#x8FC7;&#x4EFB;&#x4F55; Bourne shell &#x7684;&#x6E90;&#x4EE3;&#x7801;&#xFF0C;&#x8FD9;&#x4F7F;&#x5F97;&#x4ED6;&#x975E;&#x5E38;&#x9002;&#x5408;&#x624B;&#x5934;&#x7684;&#x4EFB;&#x52A1;&#x3002;</p>
+<p><strong>00:08:02 - Brian Fox</strong>&#xFF1A;</p>
+<p>&#x6211;&#x662F; Brian Fox&#x3002;</p>
+<p><strong>00:08:04 - Saron Yitbarek</strong>&#xFF1A;</p>
+<p>&#x4E3A;&#x4EC0;&#x4E48;&#x4E0D;&#x76F4;&#x63A5;&#x95EE;&#x95EE;&#x8FD9;&#x4E2A;&#x5E74;&#x8F7B;&#x4EBA;&#xFF0C;&#x8FD9;&#x4E2A;&#x6545;&#x4E8B;&#x662F;&#x4EC0;&#x4E48;&#x6837;&#x7684;&#x5462;&#xFF1F;&#x73B0;&#x5982;&#x4ECA;&#xFF0C;Fox &#x662F;&#x4E00;&#x4F4D;&#x5F00;&#x6E90;&#x5021;&#x5BFC;&#x8005;&#x4EE5;&#x53CA; Opus Logica &#x7684; CEO&#x3002;&#x4F46;&#x662F;&#x65E9;&#x5728; 80 &#x5E74;&#x4EE3;&#x540E;&#x671F;&#xFF0C;&#x4ED6;&#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x4FE1;&#x4EF0;&#x5F00;&#x6E90;&#x8F6F;&#x4EF6;&#x8FD0;&#x52A8;&#x7684;&#x5E74;&#x8F7B;&#x4EBA;&#x3002;&#x6211;&#x4EEC;&#x804A;&#x4E86;&#x804A;&#x8FC7;&#x53BB;&#x7684;&#x65E5;&#x5B50;&#xFF0C;&#x4EE5;&#x53CA; Bash &#x662F;&#x5982;&#x4F55;&#x4ECE;&#x90A3;&#x65F6;&#x6F14;&#x53D8;&#x8FC7;&#x6765;&#x7684;&#x3002;</p>
+<p><strong>00:08:23</strong>&#xFF1A;</p>
+<p>&#x6240;&#x4EE5;&#x90A3;&#x65F6;&#x5019;&#x7406;&#x67E5;&#x5FB7;&#x2022;&#x65AF;&#x6258;&#x66FC;&#x8BF7;&#x4F60;&#x4E3A; UNIX &#x5F00;&#x53D1;&#x4E00;&#x6B3E; shell&#x3002;&#x90A3;&#x5C06;&#x4F1A;&#x662F;&#x4E00;&#x6B3E;&#x81EA;&#x7531;&#x7684; shell&#xFF0C;&#x5E76;&#x4E14;&#x662F; Bourne shell &#x7684;&#x66FF;&#x4EE3;&#x54C1;&#x3002;&#x4F60;&#x662F;&#x5982;&#x4F55;&#x56DE;&#x5E94;&#x7684;&#x5462;&#xFF1F;</p>
+<p><strong>00:08:38 - Brian Fox</strong>&#xFF1A;</p>
+<p>&#x201C;&#x6211;&#x4EEC;&#x5C31;&#x4E0D;&#x80FD;&#x505A;&#x4E2A;&#x66F4;&#x68D2;&#x7684;&#x5417;&#xFF1F;&#x201D;</p>
+<p><strong>00:08:41 - Saron Yitbarek</strong>&#xFF1A;</p>
+<p>&#x6211;&#x559C;&#x6B22;&#x8FD9;&#x4E2A;&#x3002;&#x518D;&#x591A;&#x8DDF;&#x6211;&#x8BF4;&#x8BF4;&#x3002;</p>
+<p><strong>00:08:45 - Brian Fox</strong>&#xFF1A;</p>
+<p>&#x6211;&#x4E3A;&#x65AF;&#x6258;&#x66FC;&#x6240;&#x505A;&#x7684;&#x7B2C;&#x4E00;&#x4EF6;&#x4E8B;&#xFF0C;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x7F16;&#x5199;&#x4E2A;&#x4FE1;&#x606F;&#x6280;&#x672F;&#x6587;&#x6863;&#x7CFB;&#x7EDF;&#x3002;&#x6211;&#x8BA9;&#x7406;&#x67E5;&#x5FB7;&#x60CA;&#x8BB6;&#x4E8E;&#x6211;&#x505A;&#x8FD9;&#x79CD;&#x7F16;&#x7A0B;&#x7684;&#x901F;&#x5EA6;&#x3002;&#x4ED6;&#x662F;&#x4E2A;&#x4F18;&#x79C0;&#x7684;&#x7A0B;&#x5E8F;&#x5458;&#x800C;&#x4E14;&#x5DE5;&#x4F5C;&#x7684;&#x5F88;&#x5FEB;&#xFF0C;&#x4F46;&#x662F;&#x4ED6;&#x4E0D;&#x8BA4;&#x4E3A;&#x5176;&#x4ED6;&#x4EBA;&#x4E5F;&#x80FD;&#x5199;&#x5F97;&#x90A3;&#x4E48;&#x5FEB;&#x3002;</p>
+<p><strong>00:09:00 - Brian Fox</strong>&#xFF1A;</p>
+<p>&#x56E0;&#x6B64;&#xFF0C;&#x5728;&#x7B2C;&#x4E00;&#x5468;&#x5185;&#xFF0C;&#x6211;&#x5B8C;&#x6210;&#x4E86;&#x4E00;&#x6B3E;&#x540D;&#x4E3A; GNU Info &#x7684;&#x7A0B;&#x5E8F;&#x7684;&#x7B2C;&#x4E00;&#x7248;&#x5B9E;&#x73B0;&#xFF0C;&#x7406;&#x67E5;&#x5FB7;&#x5BF9;&#x6B64;&#x6709;&#x70B9;&#x513F;&#x9707;&#x60CA;&#x3002;&#x6211;&#x8BF4;&#xFF1A;&#x201C;&#x6211;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x9879;&#x76EE;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;&#x6211;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x9879;&#x76EE;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;&#x201D;&#x4ED6;&#x8BF4;&#xFF1A;&#x201C;&#x597D;&#x5427;&#xFF0C;&#x73B0;&#x5728;&#x7ED9;&#x5B83;&#x505A;&#x4E2A;&#x7F16;&#x8BD1;&#x5668;&#x5427;&#x3002;&#x201D;&#x6211;&#x5C31;&#x505A;&#x4E86;&#xFF0C;&#x4E00;&#x5468;&#x65F6;&#x95F4;&#x4E4B;&#x5185;&#x5C31;&#x5B8C;&#x6210;&#x4E86;&#x3002;&#x7136;&#x540E;&#x6211;&#x8BF4;&#xFF1A;&#x201C;&#x6211;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x9879;&#x76EE;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;&#x6211;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x9879;&#x76EE;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;&#x201D;&#x4ED6;&#x8BF4;&#xFF1A;&#x201C;&#x597D;&#x5427;&#xFF0C;&#x53E6;&#x4E00;&#x4E2A;&#x5BB6;&#x4F19;&#x4E00;&#x76F4;&#x5728;&#x7814;&#x7A76;&#x90A3;&#x4E2A; shell&#xFF0C;&#x4F46;&#x4ED6;&#x8FD8;&#x6CA1;&#x6709;&#x592A;&#x591A;&#x8FDB;&#x5C55;&#x3002;&#x201D;&#x6211;&#x8BF4;&#x4E86;&#x201C;&#x597D;&#x7684;&#x201D;&#xFF0C;&#x4E5D;&#x4E2A;&#x6708;&#x540E;&#xFF0C; Bourne shell &#x7684;&#x66FF;&#x4EE3;&#x54C1;&#x5B8C;&#x6210;&#x4E86;&#x3002;</p>
+<p><strong>00:09:29 - Saron Yitbarek</strong>&#xFF1A;</p>
+<p>&#x4E5D;&#x4E2A;&#x6708;&#xFF0C;&#x54C7;&#x3002;&#x518D;&#x591A;&#x544A;&#x8BC9;&#x6211;&#x4E00;&#x4E9B;&#x3002;&#x4E3A;&#x4EC0;&#x4E48;&#x5B83;&#x5982;&#x6B64;&#x5177;&#x6709;&#x6311;&#x6218;&#x6027;&#xFF1F;</p>
+<p><strong>00:09:33 - Brian Fox</strong>&#xFF1A;</p>
+<p>&#x8FD9;&#x771F;&#x662F;&#x4E2A;&#x6709;&#x8DA3;&#x7684;&#x95EE;&#x9898;&#x3002;&#x5B83;&#x4E4B;&#x6240;&#x4EE5;&#x5982;&#x6B64;&#x5177;&#x6709;&#x6311;&#x6218;&#x6027;&#xFF0C;&#x662F;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x5FC5;&#x987B;&#x5FE0;&#x5B9E;&#x5730;&#x6A21;&#x4EFF; Stephen Bourne &#x6700;&#x521D;&#x7684; Bourne shell &#x7684;&#x6240;&#x6709;&#x884C;&#x4E3A;&#xFF0C;&#x540C;&#x65F6;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x6269;&#x5C55;&#xFF0C;&#x8BA9;&#x5B83;&#x6210;&#x4E3A;&#x4EBA;&#x4EEC;&#x80FD;&#x4F7F;&#x7528;&#x7684;&#x3001;&#x66F4;&#x597D;&#x7684;&#x5DE5;&#x5177;&#x3002;</p>
+<p><strong>00:09:51</strong>&#xFF1A;</p>
+<p>&#x90A3;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x548C; Korn shell &#x7684;&#x4F5C;&#x8005; David Korn &#x79C1;&#x4E0B;&#x8FDB;&#x884C;&#x4E86;&#x79D8;&#x5BC6;&#x4E89;&#x8BBA;&#x3002;POSIX &#x59D4;&#x5458;&#x4F1A;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x89C4;&#x5B9A;&#x4E86;&#x4EC0;&#x4E48;&#x662F;&#x6807;&#x51C6; UNIX &#x7684;&#x59D4;&#x5458;&#x4F1A;&#xFF0C;&#x4ED6;&#x4EEC;&#x4E5F;&#x53C2;&#x4E0E;&#x4E86;&#x8FDB;&#x6765;&#xFF0C;&#x5E76;&#x8BF4;&#xFF1A;&#x201C;&#x54E6;&#xFF0C;&#x5F88;&#x597D;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x77E5;&#x9053; shell &#x5230;&#x5E95;&#x8981;&#x5305;&#x542B;&#x4E9B;&#x4EC0;&#x4E48;&#x3002;&#x201D;&#x800C;&#x8FD9;&#x65B9;&#x9762;&#x6700;&#x91CD;&#x8981;&#x7684;&#x4E24;&#x4E2A;&#x4EBA;&#x662F;&#x6211;&#x548C; David Korn&#x3002;David Korn &#x5DF2;&#x7ECF;&#x5199;&#x4E86;&#x4E00;&#x4E2A;&#x540D;&#x4E3A; KSH &#x7684; shell&#x3002;&#x5BF9;&#x4E8E;&#x4ED6;&#x6240;&#x52A0;&#x5165;&#x5230; KSH &#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x529F;&#x80FD;&#xFF0C;&#x4ED6;&#x90FD;&#x8BF4;&#xFF1A;&#x201C;&#x8FD9;&#x5E94;&#x8BE5;&#x662F;&#x4E00;&#x4E2A;&#x6807;&#x51C6;&#x529F;&#x80FD;&#x3002;&#x201D;&#x662F;&#x8FD9;&#x6837;&#x5417;&#xFF1F;&#x5BF9;&#x4ED6;&#x6765;&#x8BF4;&#x8FD9;&#x6BD4;&#x8D77;&#x62E5;&#x6709;&#x6700;&#x5B8C;&#x7F8E;&#x7684; POSIX shell &#x8981;&#x5BB9;&#x6613;&#x5F97;&#x591A;&#xFF0C;&#x5982;&#x679C;&#x8FD9;&#x4EC5;&#x4EC5;&#x662F;&#x4ED6;&#x7684; shell &#x7684;&#x8BDD;&#x3002;</p>
+<p><strong>00:10:31</strong>&#xFF1A;</p>
+<p>&#x5176;&#x4E2D;&#x7684;&#x4E00;&#x4E9B;&#x529F;&#x80FD;&#x5E76;&#x4E0D;&#x662F;&#x5F88;&#x597D;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x4E0D;&#x662F;&#x5F88;&#x597D;&#x7684;&#x9009;&#x62E9;&#xFF0C;&#x800C;&#x4E14;&#x4F7F;&#x5F97;&#x8FD9;&#x6B3E; shell &#x4E0E; Bourne shell &#x6709;&#x4E9B;&#x4E0D;&#x517C;&#x5BB9;&#xFF0C;&#x6216;&#x8005;&#x6211;&#x89C9;&#x5F97;&#x7F3A;&#x5C11;&#x529F;&#x80FD;&#xFF0C;&#x5BF9;&#x6B64;&#x6211;&#x4EEC;&#x8FDB;&#x884C;&#x4E86;&#x4E00;&#x4E9B;&#x8BA8;&#x8BBA;&#x548C;&#x4E89;&#x8BBA;&#xFF0C;&#x56E0;&#x6B64;&#x6784;&#x5EFA;&#x4E00;&#x4E2A;&#x517C;&#x5BB9; POSIX &#x7684; shell &#x4E0E;&#x8FC7;&#x53BB;&#x4E3A; Bourne shell &#x6240;&#x7F16;&#x5199;&#x7684;&#x6BCF;&#x4E2A; shell &#x811A;&#x672C;&#x90FD;&#x5B8C;&#x5168;&#x517C;&#x5BB9;&#x82B1;&#x4E86;&#x8D85;&#x8FC7; 3 &#x4E2A;&#x6708;&#x65F6;&#x95F4;&#x3002;</p>
+<p><strong>00:10:54 - Saron Yitbarek</strong>&#xFF1A;</p>
+<p>&#x56E0;&#x6B64;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x6B63;&#x5728;&#x8BBE;&#x8BA1;&#x7684;&#x4EA7;&#x54C1;&#x4E0D;&#x4EC5;&#x53EF;&#x4EE5;&#x53D6;&#x4EE3; Bourne shell&#xFF0C;&#x800C;&#x4E14;&#x8FD8;&#x8BD5;&#x56FE;&#x6A21;&#x4EFF; Bourne shell &#x7684;&#x6BCF;&#x4E2A;&#x90E8;&#x5206;&#xFF0C;&#x542C;&#x8D77;&#x6765;&#x4F60;&#x53EF;&#x80FD;&#x4F1A;&#x9047;&#x5230;&#x4E00;&#x4E9B;&#x7248;&#x6743;&#x95EE;&#x9898;&#x3002;&#x4F60;&#x662F;&#x5982;&#x4F55;&#x5904;&#x7406;&#x7684;&#xFF1F;</p>
+<p><strong>00:11:08 - Brian Fox</strong>&#xFF1A;</p>
+<p>&#x4E3A;&#x4E86;&#x6784;&#x5EFA;&#x771F;&#x6B63;&#x5F00;&#x6E90;&#x800C;&#x81EA;&#x7531;&#x7684;&#x8F6F;&#x4EF6;&#xFF0C;&#x4F60;&#x5FC5;&#x987B;&#x5F97;&#x5728;&#x4E00;&#x4E2A;&#x5E72;&#x51C0;&#x7684;&#x7A7A;&#x95F4;&#x91CC;&#xFF0C;&#x5F00;&#x59CB;&#x505A;&#x8FD9;&#x9879;&#x5DE5;&#x4F5C;&#x3002;&#x4F60;&#x4E0D;&#x80FD;&#x4ECE;&#x67E5;&#x770B;&#x522B;&#x4EBA;&#x7684;&#x4EE3;&#x7801;&#x5F00;&#x59CB;&#x7136;&#x540E;&#x91CD;&#x65B0;&#x5B9E;&#x73B0;&#x5B83;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x6211;&#x4ECE;&#x672A;&#x89C1;&#x8FC7;&#x4E0E;&#x4EFB;&#x4F55;&#x8D1D;&#x5C14;&#x7684;&#x7CFB;&#x7EDF;&#x3001;UNIX &#x6216;&#x8005;&#x751A;&#x81F3; Berkeley UNIX &#x76F8;&#x5173;&#x7684;&#x4EFB;&#x4F55;&#x8F6F;&#x4EF6;&#xFF0C;&#x4E5F;&#x4ECE;&#x672A;&#x89C1;&#x8FC7;&#x8FD9;&#x4E9B;&#x4E1C;&#x897F;&#x7684;&#x6E90;&#x4EE3;&#x7801;&#x3002;</p>
+<p><strong>00:11:29</strong>&#xFF1A;</p>
+<p>&#x5F53;&#x6211;&#x5F00;&#x59CB;&#x6784;&#x5EFA; Bash shell &#x65F6;&#xFF0C;&#x6211;&#x4F7F;&#x7528;&#x4E86;&#x4E00;&#x4E2A;&#x540D;&#x4E3A; Bison &#x7684;&#x89E3;&#x6790;&#x5668;&#xFF0C;&#x7406;&#x67E5;&#x5FB7;&#x5DF2;&#x7ECF;&#x5C06;&#x5176;&#x6574;&#x5408;&#x5230;&#x81EA;&#x7531;&#x8F6F;&#x4EF6;&#x57FA;&#x91D1;&#x4F1A;&#x91CC;&#xFF0C;&#x5E76;&#x4E14;&#x4E0E;&#x4E4B;&#x524D;&#x4EFB;&#x4F55;&#x7684;&#x5176;&#x4ED6;&#x7A0B;&#x5E8F;&#x5B8C;&#x5168;&#x4E0D;&#x540C;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x6211;&#x5DF2;&#x7ECF;&#x77E5;&#x9053;&#x6211;&#x6240;&#x8981;&#x6784;&#x5EFA;&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x7EDD;&#x5BF9;&#x4E0D;&#x4F1A;&#x4FB5;&#x72AF;&#x4EFB;&#x4F55;&#x5148;&#x524D;&#x6784;&#x5EFA;&#x7684;&#x4E1C;&#x897F;&#x7684;&#x7248;&#x6743;&#x3002;</p>
+<p><strong>00:11:55 - Saron Yitbarek</strong>&#xFF1A;</p>
+<p>&#x521B;&#x5EFA; Bash &#x7684;&#x5DE5;&#x4F5C;&#x6709;&#x5F88;&#x591A;&#x5C0F;&#x63D2;&#x66F2;&#xFF0C;&#x5BF9;&#x4E8E;&#x90A3;&#x4E9B;&#x786C;&#x6838;&#x7684;&#x4EE3;&#x7801;&#x82F1;&#x96C4;&#x6765;&#x8BF4;&#xFF0C;&#x8FD9;&#x53EA;&#x662F;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#x3002;</p>
+<p><strong>00:12:03 - Brian Fox</strong>&#xFF1A;</p>
+<p>&#x6709;&#x4E00;&#x6B21;&#xFF0C;&#x6211;&#x6B63;&#x81F4;&#x529B;&#x4E8E;&#x5728; shell &#x4E2D;&#x5B9E;&#x73B0;<ruby>&#x901A;&#x914D;&#x6269;&#x5C55;<rt>globbing</rt></ruby>&#x3002;&#x4E3E;&#x4F8B;&#x6765;&#x8BF4;&#xFF0C;&#x8FD9;&#x662F;&#x5141;&#x8BB8;&#x4F60;&#x5339;&#x914D;&#x5927;&#x91CF;&#x6587;&#x4EF6;&#x7684;&#x901A;&#x914D;&#x7B26;&#x6269;&#x5C55;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x7ED9;&#x51FA; <code>*.c</code>&#xFF0C;&#x800C;&#x8FD9;&#x4F1A;&#x5339;&#x914D;&#x6240;&#x6709;&#x5E26;&#x6709; <code>.c</code> &#x6269;&#x5C55;&#x540D;&#x7684;&#x6587;&#x4EF6;&#x3002;</p>
+<p><strong>00:12:17</strong>&#xFF1A;</p>
+<p>&#x56E0;&#x6B64;&#x6211;&#x5728;&#x901A;&#x914D;&#x6269;&#x5C55;&#x4E0A;&#x5FD9;&#x6D3B;&#x4E86;&#x51E0;&#x4E2A;&#x5C0F;&#x65F6;&#xFF0C;&#x5E76;&#x4E14;&#x4F7F;&#x5176;&#x751F;&#x6548;&#x4E86;&#xFF0C;&#x5BF9;&#x6B64;&#x6211;&#x611F;&#x5230;&#x5F88;&#x5174;&#x594B;&#x3002;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x5F88;&#x597D;&#x7684;&#x5B9E;&#x73B0;&#x3002;&#x800C;&#x5728;&#x521B;&#x5EFA;&#x8FD9;&#x4E00;&#x7248;&#x5B9E;&#x73B0;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x6211;&#x5728;&#x6211;&#x7684;&#x76EE;&#x5F55;&#x91CC;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x540D;&#x4E3A; <code>*.c</code> &#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x7136;&#x540E;&#x6211;&#x60F3;&#xFF1A;&#x201C;&#x597D;&#x5427;&#xFF0C;&#x6211;&#x5E94;&#x8BE5;&#x5220;&#x6389;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x201D;&#xFF0C;&#x7136;&#x540E;&#x6211;&#x8F93;&#x5165;&#x4E86; RM&#x3001;&#x7A7A;&#x683C;&#x3001;&#x5F15;&#x53F7;&#x3001;&#x661F;&#x53F7;&#x70B9; C&#x3001;&#x95ED;&#x5408;&#x5F15;&#x53F7;&#xFF0C;&#x5728;&#x73B0;&#x4EE3; shell &#x4E2D;&#x5F53;&#x4F60;&#x4F7F;&#x7528;&#x4E86;&#x62EC;&#x53F7;&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x201C;&#x4E0D;&#x8981;&#x6269;&#x5C55;&#x8FD9;&#x4E2A;&#x201D;&#xFF0C;&#x7136;&#x540E;&#x6211;&#x6309;&#x4E0B;&#x4E86;&#x56DE;&#x8F66;&#xFF0C;&#x63D0;&#x793A;&#x7B26;&#x8FC7;&#x4E86;&#x5F88;&#x957F;&#x65F6;&#x95F4;&#x624D;&#x91CD;&#x65B0;&#x51FA;&#x73B0;&#xFF0C;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x6B63;&#x5728;&#x4F7F;&#x7528; Sun 350s&#xFF0C;&#x8FD0;&#x884C;&#x7F13;&#x6162;&#x3002;&#x6211;&#x610F;&#x8BC6;&#x5230;&#xFF0C;&#x4E4B;&#x6240;&#x4EE5;&#x82B1;&#x4E86;&#x5F88;&#x957F;&#x65F6;&#x95F4;&#x662F;&#x56E0;&#x4E3A;&#x5B83;&#x8981;&#x5220;&#x9664;&#x8FD9;&#x4E2A;&#x76EE;&#x5F55;&#x91CC;&#x7684;&#x6240;&#x6709;&#x6E90;&#x6587;&#x4EF6;&#x3002;</p>
+<p><strong>00:12:58 - Saron Yitbarek</strong>&#xFF1A;</p>
+<p>&#x54E6;&#xFF0C;&#x4E0D;&#xFF01;</p>
+<p><strong>00:12:59 - Brian Fox</strong>&#xFF1A;</p>
+<p>&#x662F;&#x7684;&#x3002;&#x6240;&#x4EE5;&#x6211;&#x5F53;&#x65F6;&#x5220;&#x6389;&#x4E86; Bash &#x7684;&#x6E90;&#x4EE3;&#x7801;&#x3002;</p>
+<p><strong>00:13:01 - Saron Yitbarek</strong>&#xFF1A;</p>
+<p>&#x54E6;&#xFF0C;&#x4E0D;&#x8981;&#x3002;</p>
+<p><strong>00:13:04 - Brian Fox</strong>&#xFF1A;</p>
+<p>&#x8FD9; &#x2014;&#x2014;</p>
+<p><strong>00:13:05 - Saron Yitbarek</strong>&#xFF1A;</p>
+<p>&#x54E6;&#x6211;&#x7684;&#x5929;&#x54EA;&#xFF0C;&#x55EF;&#x3002;</p>
+<p><strong>00:13:06 - Brian Fox</strong>&#xFF1A;</p>
+<p>&#x8FD9;&#x4EF6;&#x4E8B;&#x8BA9;&#x6211;&#x7B11;&#x4E86;&#x5F88;&#x4E45;&#xFF0C;&#x7B11;&#x7684;&#x5F88;&#x5927;&#x58F0;&#x3002;&#x6211;&#x751A;&#x81F3;&#x6CA1;&#x6709;&#x611F;&#x5230;&#x4E00;&#x4E1D;&#x6CAE;&#x4E27;&#x3002;&#x7136;&#x540E;&#x5728;&#x63A5;&#x4E0B;&#x6765;&#x7684;&#x51E0;&#x5929;&#x91CC;&#xFF0C;&#x6211;&#x91CD;&#x65B0;&#x8F93;&#x5165;&#x4E86;&#x5168;&#x90E8;&#x3002;&#x8FD9;&#x4EFD;&#x4EE3;&#x7801;&#x5728;&#x6211;&#x8111;&#x6D77;&#x91CC;&#x662F;&#x5B8C;&#x5168;&#x662F;&#x5D2D;&#x65B0;&#x7684;&#x3002;</p>
+<p><strong>00:13:20 - Saron Yitbarek</strong>&#xFF1A;</p>
+<p>&#x54C7;&#x3002;</p>
+<p><strong>00:13:20 - Brian Fox</strong>&#xFF1A;</p>
+<p>&#x95EE;&#x9898;&#x89E3;&#x51B3;&#x4E86;&#x3002;&#x53EA;&#x9700;&#x5C06;&#x5176;&#x8BB0;&#x5F55;&#x5230;&#x6587;&#x4EF6;&#x4E2D;&#x5373;&#x53EF;&#x3002;</p>
+<p><strong>00:13:25 - Saron Yitbarek</strong>&#xFF1A;</p>
+<p>&#x597D;&#x7684;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5927;&#x591A;&#x6570;&#x4EBA;&#x4F1A;&#x5728;&#x90A3;&#x4E00;&#x523B;&#x5B8C;&#x5168;&#x60CA;&#x614C;&#x5931;&#x63AA;&#x3002;&#x800C;&#x4F60;&#x7B11;&#x4E86;&#xFF0C;&#x53EA;&#x662F;&#x8BF4;&#xFF1A;&#x201C;&#x54E6;&#xFF0C;&#x6211;&#x60F3;&#x6211;&#x5FC5;&#x987B;&#x91CD;&#x65B0;&#x505A;&#x4E00;&#x904D;&#x4E86;&#x3002;&#x201D;&#x4E3A;&#x4EC0;&#x4E48;&#x4F60;&#x5F53;&#x65F6;&#x90A3;&#x4E48;&#x51B7;&#x9759;&#x5462;&#xFF1F;</p>
+<p><strong>00:13:35 - Brian Fox</strong>&#xFF1A;</p>
+<p>&#x8FD9;&#x8BA9;&#x6211;&#x611F;&#x5230;&#x75AF;&#x72C2;&#x5F88;&#x8352;&#x5510;&#xFF0C;&#x4E5F;&#x975E;&#x5E38;&#x597D;&#x7B11;&#xFF0C;&#x6211;&#x6B63;&#x5728;&#x6253;&#x9020;&#x8FD9;&#x4E2A;&#x5DE5;&#x5177;&#xFF0C;&#x800C;&#x8981;&#x786E;&#x4FDD;&#x81EA;&#x5DF1;&#x80FD;&#x641E;&#x597D;&#xFF0C;&#x786E;&#x4FDD;&#x8BE5;&#x5DE5;&#x5177;&#x6B63;&#x5E38;&#x5DE5;&#x4F5C;&#xFF0C;&#x4F60;&#x5F97;&#x5728;&#x6784;&#x5EFA;&#x5B83;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x5C31;&#x4F7F;&#x7528;&#x5B83;&#x3002;&#x4F46;&#x662F;&#x8BE5;&#x5DE5;&#x5177;&#x65E0;&#x6CD5;&#x6B63;&#x5E38;&#x5DE5;&#x4F5C;&#x3002;&#x6211;&#x8FD8;&#x6CA1;&#x6709;&#x5B9E;&#x73B0;&#x5F15;&#x53F7;&#xFF0C;&#x5E76;&#x4E14;&#x56E0;&#x4E3A;&#x6211;&#x8FD8;&#x6CA1;&#x5B9E;&#x73B0;&#x5F15;&#x53F7;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x8F93;&#x5165;&#x7684;&#x547D;&#x4EE4;&#x6CA1;&#x6709;&#x6309;&#x7167;&#x6211;&#x6240;&#x9884;&#x671F;&#x7684;&#x53BB;&#x6267;&#x884C;&#xFF0C;&#x6211;&#x89C9;&#x5F97;&#x8FD9;&#x771F;&#x7684;&#x5F88;&#x6ED1;&#x7A3D;&#x3002;</p>
+<p><strong>00:14:06 - Saron Yitbarek</strong>&#xFF1A;</p>
+<p>&#x592A;&#x795E;&#x5947;&#x4E86;&#x3002;</p>
+<p><strong>00:14:08</strong>&#xFF1A;</p>
+<p>&#x4E0D;&#x8FC7;&#xFF0C;&#x751A;&#x81F3;&#x662F;&#x5173;&#x4E8E;&#x9519;&#x8BEF;&#x7684;&#x8FD9;&#x4E2A;&#x6545;&#x4E8B;&#x4E5F;&#x80FD;&#x8BF4;&#x660E; Fox &#x7684;&#x624D;&#x534E;&#x3002;&#x4ED6;&#x4EEC;&#x8BF4;&#x83AB;&#x624E;&#x7279;&#x5728;&#x5934;&#x8111;&#x4E2D;&#x5B8C;&#x6210;&#x4E86;&#x4EA4;&#x54CD;&#x66F2;&#xFF0C;&#x7136;&#x540E;&#x53EA;&#x9700;&#x8981;&#x5728;&#x5B8C;&#x6210;&#x540E;&#x5199;&#x4E0B;&#x6765;&#x5373;&#x53EF;&#x3002;Fox &#x4E5F;&#x6709;&#x7C7B;&#x4F3C;&#x7684;&#x5929;&#x8D4B;&#x3002;</p>
+<p><strong>00:14:23</strong>&#xFF1A;</p>
+<p>&#x56E0;&#x6B64;&#xFF0C;&#x5F53;&#x4F60;&#x6700;&#x7EC8;&#x5B8C;&#x6210;&#x5E76;&#x4EA4;&#x4ED8; Bash &#x65F6;&#xFF0C;&#x611F;&#x89C9;&#x5982;&#x4F55;&#x5462;&#xFF1F;</p>
+<p><strong>00:14:27 - Brian Fox</strong>&#xFF1A;</p>
+<p>&#x5475;&#xFF0C;&#x5176;&#x5B9E;&#x611F;&#x89C9;&#x5F88;&#x58EE;&#x89C2;&#x3002;&#x90A3;&#x4E48;&#x8FD9;&#x91CC;&#x6709;&#x4E00;&#x4E2A;&#x6545;&#x4E8B;&#xFF0C;&#x5176;&#x5B9E;&#x6211;&#x4E00;&#x822C;&#x4E0D;&#x8BB2;&#x7684;&#x3002;&#x6784;&#x5EFA;&#x8FD9;&#x6B3E; shell &#x82B1;&#x4E86;&#x5927;&#x7EA6; 8 &#x4E2A;&#x6708;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5F53;&#x65F6;&#x6211;&#x77E5;&#x9053;&#xFF0C;&#x6211;&#x5927;&#x6982;&#x8FD8;&#x9700;&#x8981;&#x5927;&#x7EA6;&#x4E00;&#x4E2A;&#x6708;&#x65F6;&#x95F4;&#x624D;&#x80FD;&#x5B8C;&#x6210;&#x5DE5;&#x4F5C;&#xFF0C;&#x7136;&#x540E;&#x53E6;&#x4E00;&#x4E2A; shell &#x53D1;&#x5E03;&#x4E86; &#x2014;&#x2014; ASH&#xFF0C;&#x4E00;&#x4E2A;&#x5F00;&#x6E90;&#x7684; shell &#x88AB;&#x53D1;&#x5E03;&#x4E86;&#xFF0C;&#x6211;&#x5F88;&#x6CAE;&#x4E27;&#xFF0C;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x8FD8;&#x6CA1;&#x6709;&#x5411;&#x4EFB;&#x4F55;&#x4EBA;&#x53D1;&#x5E03; Bash shell&#xFF0C;&#x6240;&#x4EE5;&#x53EA;&#x6709;&#x5C11;&#x6570;&#x4EBA;&#x5728;&#x4F7F;&#x7528;&#x5B83;&#x3002;&#x6211;&#x77E5;&#x9053;&#x8FD9;&#x8FD8;&#x9700;&#x4E00;&#x4E2A;&#x6708;&#x7684;&#x5DE5;&#x4F5C;&#x91CF;&#xFF0C;&#x4E8E;&#x662F;&#x6211;&#x60F3;&#xFF1A;&#x201C;&#x54E6;&#xFF0C;&#x8FD9;&#x592A;&#x7CDF;&#x7CD5;&#x4E86;&#x3002;&#x6211;&#x6295;&#x5165;&#x7684;&#x5168;&#x90E8;&#x80FD;&#x91CF;&#x548C;&#x7CBE;&#x529B;&#x90FD;&#x4E0D;&#x4F1A;&#x5F97;&#x5230;&#x8D5E;&#x8BB8;&#xFF0C;&#x751A;&#x81F3;&#x53EF;&#x80FD;&#x90FD;&#x4E0D;&#x4F1A;&#x88AB;&#x770B;&#x89C1;&#x3002;&#x201D;&#x6240;&#x4EE5;&#x6211;&#x975E;&#x5E38;&#x6CAE;&#x4E27;&#x3002;&#x8FD9;&#x6B21;&#x6211;&#x6CA1;&#x6709;&#x7B11;&#x3002; </p>
+<p><strong>00:15:13 - Saron Yitbarek</strong>&#xFF1A;</p>
+<p>&#x7136;&#x800C;&#xFF0C;&#x5E03;&#x4E01;&#x597D;&#x4E0D;&#x597D;&#xFF0C;&#x5403;&#x4E86;&#x624D;&#x77E5;&#x9053;&#x3002;GNU &#x7684; Bash &#x53D1;&#x5E03;&#x4E8E; 1989 &#x5E74;&#x5E76;&#x4E14;&#x53D8;&#x6210;&#x4E86; Linux &#x7684;&#x9ED8;&#x8BA4; shell&#x3002;&#x5982;&#x4ECA;&#xFF0C;&#x5B83;&#x662F;&#x8BA1;&#x7B97;&#x673A;&#x4E2D;&#x4E0D;&#x53EF;&#x6216;&#x7F3A;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x3002; </p>
+<p><strong>00:15:25</strong>&#xFF1A;</p>
+<p>&#x5B83;&#x65E0;&#x5904;&#x4E0D;&#x5728;&#x3002;&#x5982;&#x6B64;&#x591A;&#x7684;&#x4EBA;&#x6BCF;&#x5929;&#x90FD;&#x5728;&#x4F7F;&#x7528;&#x5B83;&#x3002;&#x5B83;&#x904D;&#x5E03;&#x4E8E;&#x6BCF;&#x4E00;&#x53F0;&#x8BA1;&#x7B97;&#x673A;&#x4E0A;&#x3002;&#x4F5C;&#x4E3A; Bash &#x7684;&#x4F5C;&#x8005;&#x611F;&#x89C9;&#x5982;&#x4F55;&#xFF1F;</p>
+<p><strong>00:15:34 - Brian Fox</strong>&#xFF1A;</p>
+<p>&#x5927;&#x591A;&#x6570;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x751A;&#x81F3;&#x90FD;&#x6CA1;&#x6709;&#x6CE8;&#x610F;&#x5230; Bash &#x662F;&#x6BD4;&#x5DE5;&#x5177;&#x66F4;&#x52A0;&#x91CD;&#x8981;&#x7684;&#x4E1C;&#x897F;&#x3002;&#x6211;&#x771F;&#x7684;&#x6CA1;&#x6709;&#x7ECF;&#x5E38;&#x60F3;&#x8FD9;&#x4EF6;&#x4E8B;&#x3002;&#x6BCF;&#x9694;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#xFF0C;&#x6211;&#x4F1A;&#x8D70;&#x8FDB;&#x4E00;&#x5BB6;&#x82F9;&#x679C;&#x5546;&#x5E97;&#xFF0C;&#x73AF;&#x987E;&#x56DB;&#x5468;&#x7136;&#x540E;&#x60F3;&#xFF1A;&#x201C;&#x54C7;&#xFF0C;&#x8FD9;&#x91CC;&#x7684;&#x6BCF;&#x53F0;&#x8BA1;&#x7B97;&#x673A;&#x4E0D;&#x4EC5;&#x8FD0;&#x884C;&#x7740;&#x6211; 27 &#x5E74;&#x524D;&#x7F16;&#x5199;&#x7684;&#x8F6F;&#x4EF6;&#xFF0C;&#x751A;&#x81F3;&#x4E0A;&#x9762;&#x8FD8;&#x5305;&#x542B;&#x6709;&#x6211;&#x7684;&#x540D;&#x5B57;&#x3002;&#x201D;&#x7136;&#x540E;&#x6211;&#x60F3;&#xFF1A;&#x201C;&#x4E92;&#x8054;&#x7F51;&#x4E0A;&#x7684;&#x6BCF;&#x53F0;&#x8BA1;&#x7B97;&#x673A;&#x3001;&#x6BCF;&#x53F0;&#x670D;&#x52A1;&#x5668;&#x90FD;&#x5728;&#x8FD0;&#x884C;&#x7740; Bash shell&#xFF0C;&#x5E76;&#x4E14;&#x5176;&#x4E2D;&#x5305;&#x542B;&#x6709;&#x6211;&#x7684;&#x540D;&#x5B57;&#x3002;&#x201D;&#x7136;&#x540E; Windows &#x5728;&#x53BB;&#x5E74;&#x8FD8;&#x662F;&#x524D;&#x5E74;&#x63A8;&#x51FA;&#x4E86; Power shell&#xFF0C;&#x5C31;&#x662F; Bash&#xFF0C;&#x5F53;&#x65F6;&#x6211;&#x60F3;&#xFF1A;&#x201C;&#x54E6;&#xFF0C;&#x5929;&#x54EA;&#x3002;&#x6211;&#x7684;&#x540D;&#x5B57;&#x904D;&#x53CA;&#x5730;&#x7403;&#x4E0A;&#x7684;&#x6BCF;&#x53F0;&#x8BA1;&#x7B97;&#x673A;&#x4E86;&#x3002;&#x201D;</p>
+<p><strong>00:16:21 - Saron Yitbarek</strong>&#xFF1A;</p>
+<p>&#x4E0D;&#x8FC7;&#xFF0C;&#x6211;&#x60F3;&#x8BA9;&#x4F60;&#x4EEC;&#x80FD;&#x4ED4;&#x7EC6;&#x542C;&#x542C; Fox &#x63A5;&#x4E0B;&#x6765;&#x544A;&#x8BC9;&#x6211;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x662F;&#x5F88;&#x91CD;&#x8981;&#x3002;&#x4ED6;&#x4ECE;&#x672A;&#x60F3;&#x8FC7;&#xFF0C;&#x5B83;&#x7684;&#x7A0B;&#x5E8F;&#x4F1A;&#x8FD9;&#x6837;&#x7EDF;&#x6CBB;&#x5168;&#x7403;&#x3002;&#x4ED6;&#x8BD5;&#x56FE;&#x63D0;&#x4F9B;&#x5E2E;&#x52A9;&#xFF0C;&#x8BD5;&#x56FE;&#x5E2E;&#x52A9;&#x4ED6;&#x6240;&#x7F6E;&#x8EAB;&#x5176;&#x4E2D;&#x7684;&#x7F16;&#x7A0B;&#x6587;&#x5316;&#x3002;</p>
+<p><strong>00:16:37 - Brian Fox</strong>&#xFF1A;</p>
+<p>&#x6211;&#x5E76;&#x6CA1;&#x6709;&#x6253;&#x7B97;&#x53BB;&#x5B9E;&#x73B0;&#x51FA;&#x73B0;&#x5728;&#x6BCF;&#x4E2A;&#x4EBA;&#x7684;&#x8BA1;&#x7B97;&#x673A;&#x4E0A;&#x8FD9;&#x6837;&#x7684;&#x5B8F;&#x4F1F;&#x76EE;&#x6807;&#x3002;&#x6211;&#x5BF9;&#x6B64;&#x4E00;&#x70B9;&#x90FD;&#x4E0D;&#x611F;&#x5174;&#x8DA3;&#x3002;&#x6211;&#x60F3;&#x5236;&#x4F5C;&#x4E00;&#x6B3E;&#x6709;&#x7528;&#x7684;&#x8F6F;&#x4EF6;&#xFF0C;&#x6211;&#x5E0C;&#x671B;&#x5B83;&#x6709;&#x5178;&#x578B;&#x7684; 3 &#x5230; 5 &#x5E74;&#x8F6F;&#x4EF6;&#x5BFF;&#x547D;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x50CF;&#x73B0;&#x5728;&#x8FD9;&#x6837;&#x75AF;&#x72C2;&#x7684; 30 &#x5E74;&#x7684;&#x5BFF;&#x547D;&#x3002;</p>
+<p><strong>00:16:58 - Saron Yitbarek</strong>&#xFF1A;</p>
+<p>&#x96BE;&#x9053;&#x4F60;&#x5BF9;&#x4E8E;&#x4F60;&#x5728;&#x8BA1;&#x7B97;&#x673A;&#x9886;&#x57DF;&#x6709;&#x5982;&#x6B64;&#x5DE8;&#x5927;&#x5F71;&#x54CD;&#x529B;&#x7684;&#x4E8B;&#x60C5;&#xFF0C;&#x4E00;&#x76F4;&#x53CD;&#x5E94;&#x90A3;&#x4E48;&#x5E73;&#x6DE1;&#x5417;&#xFF1F;</p>
+<p><strong>00:17:06 - Brian Fox</strong>&#xFF1A;</p>
+<p>&#x6211;&#x4E3A;&#x81EA;&#x5DF1;&#x5199;&#x4E86; Bash &#x800C;&#x611F;&#x5230;&#x9A84;&#x50B2;&#xFF0C;&#x800C;&#x4E14;&#x5B83;&#x8BA9;&#x6211;&#x610F;&#x8BC6;&#x5230;&#x4E86;&#x6211;&#x7684;&#x4EF7;&#x503C;&#xFF0C;&#x6240;&#x4EE5;&#x6709;&#x65F6;&#x5019;&#x6211;&#x4F1A;&#x505A;&#x4E00;&#x4E9B;&#x4E8B;&#x60C5;&#xFF0C;&#x8BF8;&#x5982;&#x63A5;&#x53D7;&#x64AD;&#x5BA2;&#x9080;&#x7EA6;&#x8C08;&#x8BBA; shell &#x4E4B;&#x7C7B;&#x7684;&#x4E8B;&#x60C5;&#x3002;</p>
+<p><strong>00:17:14 - Saron Yitbarek</strong>&#xFF1A;</p>
+<p>&#x975E;&#x5E38;&#x611F;&#x8C22;&#x4F60;&#x3002;</p>
+<p><strong>00:17:15 - Brian Fox</strong>&#xFF1A;</p>
+<p>&#x8C22;&#x8C22;&#x3002;&#x4F46;&#x8FD9;&#x4E0D;&#x662F;&#x5B58;&#x5728;&#x4E8E;&#x6211;&#x65E5;&#x5E38;&#x751F;&#x6D3B;&#x4E2D;&#x7684;&#x4E1C;&#x897F;&#x3002;&#x5E78;&#x8FD0;&#x7684;&#x662F;&#xFF0C;&#x6211;&#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x9ED8;&#x9ED8;&#x65E0;&#x95FB;&#x7684;&#x4EBA;&#xFF0C;&#x5BF9;&#x5427;&#xFF1F;&#x7684;&#x786E;&#xFF0C;&#x6211;&#x7684;&#x8F6F;&#x4EF6;&#x6B63;&#x8FD0;&#x884C;&#x5728;&#x6BCF;&#x5BB6;&#x6BCF;&#x6237;&#x7684;&#x8BA1;&#x7B97;&#x673A;&#x4E0A;&#xFF0C;&#x4E0D;&#x8FC7;&#x4E5F;&#x786E;&#x5B9E;&#x6CA1;&#x6709;&#x4EBA;&#x77E5;&#x9053;&#x8FD9;&#x4E00;&#x70B9;&#xFF0C;&#x5BF9;&#x5427;&#xFF1F;&#x56E0;&#x6B64;&#x6211;&#x4FDD;&#x6301;&#x4E86;&#x8BB8;&#x591A;&#x4E2A;&#x4EBA;&#x9690;&#x79C1;&#xFF0C;&#x800C;&#x8FD9;&#x4E2A; shell &#x4EE5;&#x53CA;&#x67D0;&#x4E2A;&#x4F4F;&#x5728;&#x5723;&#x82AD;&#x82AD;&#x62C9;&#x7684;&#x4EBA;&#x7F16;&#x5199;&#x4E86;&#x5B83;&#x8FD9;&#x4E00;&#x4E8B;&#x5B9E;&#x6B63;&#x8D8A;&#x6765;&#x8D8A;&#x5E7F;&#x4E3A;&#x4EBA;&#x77E5;&#xFF0C;&#x6211;&#x5F00;&#x59CB;&#x5728;&#x751F;&#x6D3B;&#x4E2D;&#x8D8A;&#x6765;&#x8D8A;&#x591A;&#x5730;&#x6CE8;&#x610F;&#x5230;&#x5B83;&#x3002;&#x4EBA;&#x4EEC;&#x6709;&#x65F6;&#x5019;&#x6765;&#x770B;&#x6211;&#x6F14;&#x594F;&#x97F3;&#x4E50;&#xFF0C;&#x7136;&#x540E;&#x544A;&#x8BC9;&#x6211;&#x8BF4;&#xFF1A;&#x201C;&#x4F60;&#x662F;&#x5199;&#x4E86; shell &#x7684;&#x90A3;&#x4E2A;&#x5BB6;&#x4F19;&#x3002;&#x201D;&#x6211;&#x611F;&#x89C9;&#x6709;&#x70B9;&#x513F;&#x50CF; Keanu Reeves&#x3002;</p>
+<p><strong>00:17:54 - Saron Yitbarek</strong>&#xFF1A;</p>
+<p>&#x5F88;&#x9177;&#x3002;&#x6240;&#x4EE5;&#x4F60;&#x8BF4;&#x8FC7;&#x4F60;&#x4E0D;&#x6307;&#x671B; Bash &#x51FA;&#x73B0;&#x5728;&#x6BCF;&#x53F0;&#x8BA1;&#x7B97;&#x673A;&#x4E0A;&#x3002;&#x4F60;&#x6253;&#x7B97;&#x505A;&#x7684;&#x662F;&#x4EC0;&#x4E48;&#x5462;&#xFF1F;&#x4F60;&#x5BF9; Bash &#x6709;&#x4EC0;&#x4E48;&#x671F;&#x671B;&#xFF1F;</p>
+<p><strong>00:18:04 - Brian Fox</strong>&#xFF1A;</p>
+<p>&#x4E00;&#x4E2A;&#x6709;&#x7528;&#x7684;&#x66FF;&#x4EE3;&#x5DE5;&#x5177;&#xFF0C;&#x6210;&#x4E3A; GNU &#x9879;&#x76EE;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x5E76;&#x5E2E;&#x52A9;&#x521B;&#x5EFA;&#x8FD9;&#x4E2A;&#x81EA;&#x7531;&#x7684;&#x5F00;&#x6E90;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x3002;&#x6211;&#x5B9E;&#x9645;&#x4E0A;&#x4EE5;&#x4E3A;&#x4E00;&#x65E6;&#x6211;&#x4EEC;&#x5B8C;&#x6210;&#x4E86;&#x8BE5;&#x5F00;&#x6E90;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;&#x521B;&#x5EFA;&#xFF0C;&#x8BE5;&#x7CFB;&#x7EDF;&#x4E0A;&#x7684;&#x8F6F;&#x4EF6;&#x5C31;&#x53EF;&#x4EE5;&#x5347;&#x7EA7;&#xFF0C;&#x5E76;&#x4E14;&#x6211;&#x5C06;&#x6709;&#x673A;&#x4F1A;&#x521B;&#x5EFA;&#x81EA;&#x5DF1;&#x60F3;&#x8981;&#x521B;&#x5EFA;&#x7684;&#x90A3;&#x79CD; shell&#xFF0C;&#x4EE5;&#x5E2E;&#x52A9;&#x4EBA;&#x4EEC;&#x5728;&#x67D0;&#x79CD;&#x7A0B;&#x5EA6;&#x4E0A;&#x4FC3;&#x8FDB;&#x8BA1;&#x7B97;&#x673A;&#x79D1;&#x5B66;&#x7684;&#x53D1;&#x5C55;&#x3002;</p>
+<p><strong>00:18:35 - Brian Fox</strong>&#xFF1A;</p>
+<p>&#x6211;&#x6700;&#x7EC8;&#x610F;&#x8BC6;&#x5230;&#xFF0C;Bash &#x88AB;&#x521B;&#x5EFA;&#x7684;&#x539F;&#x56E0;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x4E0E;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x7684; UNIX &#x4E16;&#x754C;&#x5411;&#x540E;&#x517C;&#x5BB9;&#xFF0C;&#x5E76;&#x4E14;&#x8FD9;&#x79CD;&#x52BF;&#x5934;&#x4F7F;&#x5176;&#x4FDD;&#x6301;&#x4E86;&#x6D3B;&#x529B;&#xFF0C;&#x8FD9;&#x662F;&#x53E6;&#x4E00;&#x4E2A;&#x72EC;&#x4E00;&#x65E0;&#x4E8C;&#x7684;&#x5730;&#x4F4D;&#xFF0C;&#x4F60;&#x7684;&#x5DE5;&#x5177;&#x5982;&#x6B64;&#x57FA;&#x7840;&#xFF0C;&#x51E0;&#x4E4E;&#x662F;&#x4E00;&#x526F;&#x4E0D;&#x53EF;&#x6216;&#x7F3A;&#x7684;&#x87BA;&#x6BCD;&#x548C;&#x87BA;&#x6813;&#x3002;</p>
+<p><strong>00:19:01 - Saron Yitbarek</strong>&#xFF1A;</p>
+<p>&#x786E;&#x5B9E;&#x662F;&#x8FD9;&#x6837;&#x3002;</p>
+<p><strong>00:19:01 - Brian Fox</strong>&#xFF1A;</p>
+<p>&#x77E5;&#x9053;&#x6211;&#x521B;&#x9020;&#x4E86;&#x4E16;&#x754C;&#x4E0A;&#x67D0;&#x79CD;&#x6709;&#x4EF7;&#x503C;&#x7684;&#x3001;&#x522B;&#x4EBA;&#x4ECD;&#x7136;&#x8FD8;&#x5728;&#x4F7F;&#x7528;&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x8FD9;&#x771F;&#x7684;&#x662F;&#x4E00;&#x79CD;&#x5F88;&#x68D2;&#x7684;&#x611F;&#x89C9;&#x3002;&#x7136;&#x540E;&#x5F53;&#x6211;&#x6CE8;&#x610F;&#x5230;&#x8FD9;&#x662F;&#x600E;&#x4E48;&#x56DE;&#x4E8B;&#x65F6;&#xFF0C;&#x6211;&#x610F;&#x8BC6;&#x5230;&#xFF0C;&#x66F4;&#x91CD;&#x8981;&#x7684;&#x662F;&#xFF0C;&#x201C;&#x81EA;&#x7531;&#x8F6F;&#x4EF6;&#x201D;&#x548C;&#x201C;&#x5F00;&#x6E90;&#x201D;&#x8FD9;&#x4E9B;&#x8BCD;&#x5B58;&#x5728;&#x4E8E;&#x65E5;&#x5E38;&#x82F1;&#x8BED;&#x548C;&#x5168;&#x4E16;&#x754C;&#x7684;&#x65E5;&#x5E38;&#x8BED;&#x8A00;&#x4E4B;&#x4E2D;&#x4E86;&#xFF0C;&#x800C;&#x6700;&#x521D;&#x5E76;&#x4E0D;&#x662F;&#x8FD9;&#x6837;&#x7684;&#x3002;&#x8FD9;&#x662F;&#x6211;&#x548C;&#x7406;&#x67E5;&#x5FB7;&#x2022;&#x65AF;&#x6258;&#x66FC;&#x8FD8;&#x6709;&#x5176;&#x4ED6;&#x4EBA;&#x6240;&#x6295;&#x5165;&#x52AA;&#x529B;&#x7684;&#x4EA7;&#x7269;&#x3002;&#x4F5C;&#x4E3A;&#x8FD9;&#x4E00;&#x8FD0;&#x52A8;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x6211;&#x5F88;&#x5E78;&#x8FD0;&#x80FD;&#x8FD9;&#x4E48;&#x65E9;&#x53C2;&#x4E0E;&#xFF0C;&#x4F46;&#x8BA9;&#x6211;&#x56DE;&#x8FC7;&#x5934;&#x6765;&#x770B;&#x65F6;&#xFF0C;&#x4E5F;&#x611F;&#x5230;&#x975E;&#x5E38;&#x6EE1;&#x610F;&#xFF0C;&#x6211;&#x60F3;&#xFF1A;&#x201C;&#x54C7;&#xFF0C;&#x5F00;&#x6E90;&#x8F6F;&#x4EF6;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#xFF0C;&#x800C;&#x4E14;&#x6211;&#x5C31;&#x662F;&#x5176;&#x4E2D;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x3002;&#x201D;</p>
+<p><strong>00:19:50 - Saron Yitbarek</strong>&#xFF1A;</p>
+<p>Brian Fox &#x662F; Bash shell &#x7684;&#x521B;&#x5EFA;&#x8005;&#x548C; Opus Logica &#x7684; CEO&#x3002;</p>
+<p><strong>00:20:01 - Steve Bourne</strong>&#xFF1A;</p>
+<p>&#x4E8B;&#x5B9E;&#x4E0A;&#xFF0C;&#x6211;&#x786E;&#x5B9E;&#x542C;&#x8BF4;&#x8FC7; Bash&#x3002;</p>
+<p><strong>00:20:03 - Saron Yitbarek</strong>&#xFF1A;</p>
+<p>&#x8FD9;&#x4F4D;&#x5C31;&#x662F;&#x88AB; Brian Fox &#x7684;&#x5DE5;&#x4F5C;&#x6240;&#x66FF;&#x4EE3;&#x7684; Bourne shell &#x7684;&#x521B;&#x5EFA;&#x8005; Steve Bourne&#x3002;&#x6211;&#x4EEC;&#x60F3;&#x77E5;&#x9053; Bourne &#x5BF9; Fox &#x7684;&#x5DE5;&#x4F5C;&#x6709;&#x4F55;&#x770B;&#x6CD5;&#x3002;&#x4ED6;&#x662F;&#x5426;&#x5C06;&#x91CD;&#x751F;&#x7684; shell Bash &#x89C6;&#x4E3A;&#x81EA;&#x5DF1;&#x4F5C;&#x54C1;&#x7684;&#x5F00;&#x6E90;&#x590D;&#x5236;&#x54C1;&#xFF1F;&#x6211;&#x7684;&#x610F;&#x601D;&#x662F;&#xFF0C;&#x4ED6;&#x89C9;&#x5F97; Bash &#x600E;&#x4E48;&#x6837;&#xFF1F;</p>
+<p><strong>00:20:20 - Steve Bourne</strong>&#xFF1A;</p>
+<p>&#x6709;&#x4E00;&#x5929;&#xFF0C;&#x5199;&#x4E86; Bash &#x7684;&#x90A3;&#x4E2A;&#x4EBA;&#x5728;&#x4E00;&#x6B21;&#x4F1A;&#x8BAE;&#x4E0A;&#x627E;&#x6211;&#xFF0C;&#x7ED9;&#x4E86;&#x6211;&#x4E00;&#x4EF6; T &#x6064;&#xFF0C;&#x524D;&#x9762;&#x5370;&#x7740; &#x201C;Bourne again&#x201D; &#x7684;&#x5B57;&#x6837;&#x3002;</p>
+<p><strong>00:20:26 - Saron Yitbarek</strong>&#xFF1A;</p>
+<p>&#x90A3;&#x5C31;&#x662F; Brian Fox&#x3002;</p>
+<p><strong>00:20:29 - Steve Bourne</strong>&#xFF1A;</p>
+<p>&#x90A3;&#x662F;&#x4E00;&#x79CD;&#x53CB;&#x597D;&#x7684;&#x60C5;&#x7EEA;&#xFF0C;&#x5F53;&#x65F6;&#x662F;&#xFF1A;&#x201C;&#x597D;&#x5427;&#xFF0C;&#x5E0C;&#x671B;&#x60A8;&#x4E0D;&#x4ECB;&#x610F;&#xFF0C;&#x4F46;&#x6211;&#x53EA;&#x662F;&#x91CD;&#x5199;&#x4E86;&#x60A8;&#x7684; shell&#x201D;&#xFF0C;&#x800C;&#x6211;&#x8BF4;&#xFF1A;&#x201C;&#x542C;&#x8D77;&#x6765;&#x4E0D;&#x9519;&#x201D;&#xFF0C;&#x7136;&#x540E;&#x4ED6;&#x7ED9;&#x4E86;&#x6211;&#x4E00;&#x4EF6; T &#x6064;&#x3002;</p>
+<p><strong>00:20:38 - Saron Yitbarek</strong>&#xFF1A;</p>
+<p>&#x5982;&#x679C;&#x6211;&#x5728;&#x7F16;&#x7A0B;&#x9886;&#x57DF;&#x5B66;&#x5230;&#x4E86;&#x4E00;&#x4EF6;&#x4E8B;&#xFF0C;&#x90A3;&#x5C31;&#x662F;&#x6BCF;&#x4E2A;&#x4EBA;&#x90FD;&#x559C;&#x6B22;&#x610F;&#x5916;&#x4E4B;&#x559C;&#x3002;&#x4E8B;&#x5B9E;&#x8BC1;&#x660E;&#xFF0C;Stephen Bourne &#x8BA4;&#x4E3A; Bash &#x662F;&#x4ED6;&#x548C;&#x5176;&#x4ED6;&#x4EBA;&#x5728;&#x8D1D;&#x5C14;&#x5B9E;&#x9A8C;&#x5BA4;&#x6240;&#x505A;&#x5DE5;&#x4F5C;&#x7684;&#x5FC5;&#x8981;&#x6269;&#x5C55;&#x3002;&#x4E00;&#x70B9;&#x513F;&#x90FD;&#x4E0D;&#x4E3A;&#x6B64;&#x82E6;&#x607C;&#x3002;</p>
+<p><strong>00:20:52 - Steve Bourne</strong>&#xFF1A;</p>
+<p>&#x66FE;&#x7ECF;&#x6709;&#x4E00;&#x4E9B;&#x4EBA;&#x4EEC;&#x60F3;&#x8981;&#xFF0C;&#x4F46;&#x662F;&#x6211;&#x6CA1;&#x505A;&#x7684;&#x7279;&#x6027;&#xFF0C;&#x4F8B;&#x5982;&#x53D8;&#x91CF;&#x66FF;&#x6362;&#x548C;&#x5B57;&#x7B26;&#x4E32;&#x7BA1;&#x7406;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x4E9B;&#x90FD;&#x88AB;&#x52A0;&#x5165;&#x5230;&#x4E86; Bash &#x4E2D;&#xFF0C;&#x73B0;&#x5982;&#x4ECA;&#x4EBA;&#x4EEC;&#x7ECF;&#x5E38;&#x4F1A;&#x7528;&#x5230;&#x3002;Bash &#x548C;&#x539F;&#x59CB; shell &#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#xFF0C;&#x6211;&#x5F53;&#x65F6;&#x7684;&#x5370;&#x8C61;&#x662F;&#xFF0C;&#x5B83;&#x53EA;&#x662F;&#x5BF9;&#x8BED;&#x8A00;&#x7684;&#x91CD;&#x65B0;&#x5B9E;&#x73B0;&#xFF0C;&#x5E76;&#x4E14;&#x968F;&#x7740;&#x65F6;&#x95F4;&#x7684;&#x63A8;&#x79FB;&#xFF0C;&#x5B83;&#x786E;&#x5B9E;&#x6DFB;&#x52A0;&#x4E86;&#x529F;&#x80FD;&#xFF0C;&#x56E0;&#x6B64;&#x5B83;&#x786E;&#x5B9E;&#x53D6;&#x5F97;&#x4E86;&#x8D85;&#x8D8A;&#x6211;&#x6240;&#x5199;&#x4F5C;&#x54C1;&#x7684;&#x8FDB;&#x6B65;&#xFF0C;&#x5F53;&#x7136;&#x662F;&#x5728;&#x5B57;&#x7B26;&#x4E32;&#x7BA1;&#x7406;&#x9886;&#x57DF;&#x3002;&#x6211;&#x73B0;&#x5728;&#x4E00;&#x76F4;&#x5728;&#x7528;&#x5B83;&#x3002;</p>
+<p><strong>00:21:21 - Saron Yitbarek</strong>&#xFF1A;</p>
+<p>Steve Bourne &#x662F; Bourne shell &#x7684;&#x521B;&#x5EFA;&#x8005;&#x548C; Rally Ventures &#x7684; CTO&#x3002;</p>
+<p><strong>00:21:32 - Saron Yitbarek</strong>&#xFF1A;</p>
+<p>&#x81EA;&#x4ECE; Bash &#x5728;&#x524D;&#x5F80;&#x5723;&#x82AD;&#x82AD;&#x62C9;&#x7684;&#x957F;&#x9014;&#x8F66;&#x7A0B;&#x4E2D;&#x88AB;&#x585E;&#x8FDB; Brian Fox &#x7684;&#x5361;&#x8F66;&#x4EE5;&#x6765;&#xFF0C;&#x5DF2;&#x7ECF;&#x8FC7;&#x53BB;&#x4E86;&#x5F88;&#x591A;&#x5E74;&#x3002; 2019 &#x5E74;&#xFF0C;&#x7248;&#x672C; 5.0 &#x88AB;&#x53D1;&#x5E03;&#xFF0C;&#x5C31;&#x50CF; Fox &#x63D0;&#x5230;&#x7684;&#x90A3;&#x6837;&#xFF0C;Bash &#x73B0;&#x5728;&#x88AB;&#x5185;&#x7F6E;&#x8FDB;&#x4E86; Linux &#x4E2D;&#x3001;macOS &#x4E2D;&#xFF0C;&#x751A;&#x81F3;&#x5FAE;&#x8F6F; Windows &#x4E2D;&#x3002;Bash &#x5DF2;&#x7ECF;&#x6210;&#x4E86;&#x5F00;&#x6E90;&#x4E16;&#x754C;&#x4E2D;&#x811A;&#x672C;&#x7F16;&#x5199;&#x7684;&#x57FA;&#x77F3;&#x3002;&#x8FD9;&#x662F;&#x6211;&#x4EEC;&#x81EA;&#x52A8;&#x5316;&#x7684;&#x57FA;&#x7840;&#x3002;</p>
+<p><strong>00:22:02 - Taz Brown</strong>&#xFF1A;</p>
+<p>&#x968F;&#x7740;&#x7EC4;&#x7EC7;&#x89C4;&#x6A21;&#x7684;&#x6269;&#x5927;&#xFF0C;&#x4F7F;&#x7528;&#x80FD;&#x591F;&#x4F7F;&#x6211;&#x4EEC;&#x66F4;&#x5FEB;&#x5B8C;&#x6210;&#x5DE5;&#x4F5C;&#x7684;&#x5DE5;&#x5177;&#x53D8;&#x5F97;&#x81F3;&#x5173;&#x91CD;&#x8981;&#x3002;&#x5B83;&#x6210;&#x4E3A;&#x4E86;&#x5FC5;&#x9700;&#x54C1;&#x3002;</p>
+<p><strong>00:22:16 - Saron Yitbarek</strong>&#xFF1A;</p>
+<p>Taz Brown &#x662F; Red Hat &#x7684;&#x8D44;&#x6DF1; Ansible &#x81EA;&#x52A8;&#x5316;&#x987E;&#x95EE;&#xFF0C;&#x56E0;&#x6B64;&#x5979;&#x975E;&#x5E38;&#x4E86;&#x89E3; Bash &#x7684;&#x4EF7;&#x503C;&#x3002;</p>
+<p><strong>00:22:24 - Taz Brown</strong>&#xFF1A;</p>
+<p>&#x6211;&#x7EDD;&#x5BF9;&#x8BA4;&#x4E3A;&#x4EBA;&#x4EEC;&#x5728;&#x804C;&#x4E1A;&#x751F;&#x6DAF;&#x521D;&#x671F;&#x5C31;&#x5E94;&#x8BE5;&#x4F7F;&#x7528; Bash&#x3002;&#x4E0E;&#x5176;&#x4F7F;&#x7528; GUI &#x6216;&#x8005;&#x8BF4;&#x662F;&#x56FE;&#x5F62;&#x7528;&#x6237;&#x754C;&#x9762;&#xFF0C;&#x4E0D;&#x5982;&#x5C06;&#x81EA;&#x5DF1;&#x89C6;&#x4E3A;&#x7BA1;&#x7406;&#x5458;&#x6216; DevOps &#x4EBA;&#x5458;&#x3002;</p>
+<p><strong>00:22:39 - Saron Yitbarek</strong>&#xFF1A;</p>
+<p>&#x800C;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x4F5C;&#x4E3A;&#x4E00;&#x540D; Bash &#x7A0B;&#x5E8F;&#x5458;&#xFF0C;&#x4F60;&#x5C06;&#x4F1A;&#x638C;&#x63E1;&#x80FD;&#x8BA9;&#x4F60;&#x664B;&#x5347;&#x7684;&#x6838;&#x5FC3;&#x4EF7;&#x503C;&#x3002;</p>
+<p><strong>00:22:45 - Taz Brown</strong>&#xFF1A;</p>
+<p>&#x5B66;&#x4E60;&#x5199;&#x811A;&#x672C;&#x6709;&#x4E00;&#x5B9A;&#x7684;&#x4EF7;&#x503C;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x53EF;&#x4EE5;&#x8BA9;&#x4F60;&#x4ECE;&#x81EA;&#x52A8;&#x5316;&#x7684;&#x89D2;&#x5EA6;&#xFF0C;&#x4E3A;&#x7A0B;&#x5E8F;&#x7684;&#x957F;&#x671F;&#x8FD0;&#x884C;&#x505A;&#x6253;&#x7B97;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x811A;&#x672C;&#x7684;&#x8FD0;&#x884C;&#x65B9;&#x5F0F;&#xFF0C;&#x7136;&#x540E;&#x53EF;&#x4EE5;&#x8BF4;&#xFF1A;&#x201C;&#x597D;&#x5427;&#xFF0C;&#x6211;&#x53EF;&#x4EE5;&#x505A;&#x5230;&#xFF0C;&#x6211;&#x53EF;&#x4EE5;&#x4F7F;&#x8FD9;&#x9879;&#x4EFB;&#x52A1;&#x81EA;&#x52A8;&#x5316;&#x6267;&#x884C;&#x3002;&#x201D;&#x5B83;&#x5F00;&#x59CB;&#x4F7F;&#x4F60;&#x6210;&#x4E3A;&#x4E0E;&#x4E4B;&#x524D;&#x4E0D;&#x4E00;&#x6837;&#x7684;&#x601D;&#x60F3;&#x5BB6;&#x548C;&#x6280;&#x672F;&#x4E13;&#x5BB6;&#x3002;</p>
+<p><strong>00:23:09 - Saron Yitbarek</strong>&#xFF1A;</p>
+<p>&#x5BF9;&#x4E8E;&#x8FD0;&#x7EF4;&#x800C;&#x8A00;&#xFF0C;&#x81EA;&#x52A8;&#x5316;&#x5DF2;&#x7ECF;&#x53D8;&#x5F97;&#x4E0D;&#x53EF;&#x6216;&#x7F3A;&#x3002;&#x590D;&#x6742;&#x7684;&#x7A0B;&#x5E8F;&#x3001;&#x5E94;&#x7528;&#x548C;&#x5DE5;&#x5177;&#x5747;&#x7531;&#x4F18;&#x96C5;&#x7684; Bash &#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x3002;</p>
+<p><strong>00:23:21 - Taz Brown</strong>&#xFF1A;</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x613F;&#x610F;&#x7684;&#x8BDD;&#xFF0C;&#x4F60;&#x4E0D;&#x5FC5;&#x91CD;&#x590D;&#x9020;&#x8F6E;&#x5B50;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x4ECE; GitHub &#x5E93;&#x6216;&#x662F;&#x5176;&#x4ED6;&#x4EFB;&#x4F55;&#x4F60;&#x5B58;&#x50A8;&#x8FD9;&#x4E9B;&#x7279;&#x5B9A;&#x6587;&#x4EF6;&#x7684;&#x5730;&#x65B9;&#x62C9;&#x53D6;&#x5B83;&#x4EEC;&#x3002;Bash &#x5141;&#x8BB8;&#x4F60;&#x8FD9;&#x4E48;&#x505A;&#x3002;Bash &#x5141;&#x8BB8;&#x4F60;&#x6267;&#x884C;&#x8FD9;&#x4E9B;&#x5E38;&#x89C1;&#x4EFB;&#x52A1;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x4ECE; 10 &#x53F0;&#x670D;&#x52A1;&#x5668;&#x6269;&#x5C55;&#x5230; 1000 &#x53F0;&#x670D;&#x52A1;&#x5668;&#x3002;</p>
+<p><strong>00:23:42</strong>&#xFF1A;</p>
+<p>&#x5173;&#x4E8E;&#x81EA;&#x52A8;&#x5316;&#x7684;&#x4F1F;&#x5927;&#x4E4B;&#x5904;&#x5728;&#x4E8E;&#xFF0C;&#x4E00;&#x65E6;&#x4F60;&#x5236;&#x5B9A;&#x4E86;&#x8BA1;&#x5212;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x4EE5;&#x4E00;&#x79CD;&#x975E;&#x5E38;&#x6709;&#x6548;&#x7684;&#x65B9;&#x5F0F;&#x6267;&#x884C;&#x3002;&#x5B83;&#x5141;&#x8BB8;&#x4F60;&#x6267;&#x884C;&#x90A3;&#x4E9B;&#xFF0C;&#x65E0;&#x6CD5;&#x624B;&#x52A8;&#x6267;&#x884C;&#x7684;&#x64CD;&#x4F5C;&#x3002;</p>
+<p><strong>00:23:56 - Saron Yitbarek</strong>&#xFF1A;</p>
+<p>&#x6700;&#x8FD1; Taz Brown &#x6240;&#x4ECE;&#x4E8B;&#x5F00;&#x53D1;&#x7684; Ansible&#xAE; &#x8FD9;&#x6837;&#x7684;&#x6700;&#x65B0;&#x4EA7;&#x54C1;&#x53EF;&#x4EE5;&#x59CB;&#x7EC8;&#x4E0E; Bash &#x96C6;&#x6210;&#x5728;&#x4E00;&#x8D77;&#xFF0C;&#x5B8C;&#x6210;&#x4E86;&#x5DE5;&#x4F5C;&#x3002;</p>
+<p><strong>00:24:04 - Taz Brown</strong>&#xFF1A;</p>
+<p>&#x867D;&#x7136;&#x65F6;&#x4EE3;&#x5728;&#x4E0D;&#x505C;&#x524D;&#x8FDB;&#xFF0C;&#x4F46;&#x662F;&#x6211;&#x8BA4;&#x4E3A; Bash &#x6C38;&#x8FDC;&#x90FD;&#x4F1A;&#x662F;&#x7BA1;&#x7406;&#x5458;&#x4F1A;&#x53BB;&#x9009;&#x62E9;&#x4F7F;&#x7528;&#x7684;&#x5DE5;&#x5177;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x4ED6;&#x4EEC;&#x60F3;&#x8981;&#x5FEB;&#x901F;&#x81EA;&#x52A8;&#x5316;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x3002;</p>
+<p><strong>00:24:14 - Saron Yitbarek</strong>&#xFF1A;</p>
+<p>&#x6700;&#x540E;&#xFF0C;&#x8FD9;&#x4E00;&#x5207;&#x7684;&#x6210;&#x529F;&#xFF0C;&#x90FD;&#x53EF;&#x4EE5;&#x8FFD;&#x6EAF;&#x5230;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x81EA;&#x7531;&#x7684;&#x3001;&#x5141;&#x8BB8;&#x6240;&#x6709;&#x4EBA;&#x52A0;&#x4EE5;&#x6539;&#x8FDB;&#x7684;&#x8F6F;&#x4EF6;&#x8FD9;&#x4EF6;&#x4E8B;&#x4E0A;&#x3002;&#x5B83;&#x662F; Brian Fox &#x63D0;&#x4F9B;&#x7ED9;&#x4E16;&#x754C;&#x7684;&#xFF0C;&#x67D0;&#x79CD;&#x6CA1;&#x6709;&#x8BB8;&#x53EF;&#x8BC1;&#x548C;&#x9650;&#x5236;&#x7684;&#x4E1C;&#x897F;&#x3002;&#x6EE1;&#x8DB3;&#x4E86;&#x4EBA;&#x4EEC;&#x4E00;&#x76F4;&#x7684;&#x9700;&#x6C42;&#xFF0C;&#x6240;&#x4EE5;&#x662F; Bash &#x6210;&#x529F;&#x7684;&#x5173;&#x952E;&#x3002;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x4ED6;&#x751A;&#x81F3;&#x5DF2;&#x7ECF;&#x4E0D;&#x518D;&#x4E3B;&#x7BA1; Bash &#x5F00;&#x53D1;&#x5DF2;&#x7ECF;&#x5F88;&#x957F;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x4E86;&#x3002;&#x8FD9;&#x4F4D;&#x662F; Chet Ramey&#xFF0C;&#x4ED6;&#x7EF4;&#x62A4;&#x4E86; Bash &#x6570;&#x5341;&#x5E74;&#x3002;</p>
+<p><strong>00:24:38 - Chet Ramey</strong>&#xFF1A;</p>
+<p>&#x6211;&#x60F3;&#xFF0C;Brian &#x5728;&#x53D1;&#x5E03; 1.05 &#x7248;&#x672C;&#x540E;&#x5C31;&#x5DF2;&#x7ECF;&#x51B3;&#x5B9A;&#x4E86;&#x4ED6;&#x60F3;&#x8981;&#x7EE7;&#x7EED;&#x53BB;&#x4ECE;&#x4E8B;&#x5176;&#x4ED6;&#x5DE5;&#x4F5C;&#x3002;&#x4ED6;&#x66FE;&#x5728;&#x81EA;&#x7531;&#x8F6F;&#x4EF6;&#x57FA;&#x91D1;&#x4F1A;&#x8D1F;&#x8D23;&#x8FC7;&#x5176;&#x4ED6;&#x4EFB;&#x52A1;&#xFF0C;&#x4ED6;&#x60F3;&#x505A;&#x9664;&#x4E86; Bash &#x4EE5;&#x5916;&#x7684;&#x4E8B;&#x60C5;&#xFF0C;&#x800C;&#x6211;&#x662F; Bash &#x6700;&#x6D3B;&#x8DC3;&#x7684;&#x8D21;&#x732E;&#x8005;&#x3002;&#x4ED6;&#x548C;&#x6211;&#x4E00;&#x8D77;&#x5F00;&#x53D1;&#x4E86;&#x8BB8;&#x591A;&#x65B0;&#x529F;&#x80FD;&#x3002;&#x6211;&#x4EEC;&#x5171;&#x540C;&#x52AA;&#x529B;&#x89E3;&#x51B3;&#x4E86;&#x8BB8;&#x591A; bug&#xFF0C;&#x56E0;&#x6B64;&#x5F53;&#x5230;&#x4E86;&#x9700;&#x8981;&#x5176;&#x4ED6;&#x4EBA;&#x63A5;&#x624B;&#x65F6;&#xFF0C;&#x6211;&#x662F;&#x6700;&#x4F73;&#x4EBA;&#x9009;&#x3002;</p>
+<p><strong>00:25:16 - Saron Yitbarek</strong>&#xFF1A;</p>
+<p>&#x5C31;&#x50CF; Fox &#x4E00;&#x6837;&#xFF0C;Ramey &#x4E5F;&#x5FC5;&#x987B;&#x7EE7;&#x7EED;&#x52AA;&#x529B;&#xFF0C;&#x56E0;&#x4E3A; Bash &#x6BD4;&#x4EFB;&#x4F55;&#x4E00;&#x4F4D;&#x7EF4;&#x62A4;&#x8005;&#x90FD;&#x91CD;&#x8981;&#x3002;</p>
+<p><strong>00:25:25 - Chet Ramey</strong>&#xFF1A;</p>
+<p>&#x6211;&#x662F;&#x4ECE; 23 &#x5C81;&#x5F00;&#x59CB;&#x8D21;&#x732E;&#x7684;&#xFF0C;&#x6709;&#x70B9;&#x513F;&#x50CF;&#x662F;&#x6211;&#x548C; Bash &#x5171;&#x540C;&#x6210;&#x957F;&#x3002;&#x5728;&#x67D0;&#x4E9B;&#x65F6;&#x523B;&#xFF0C;&#x6211;&#x4F1A;&#x9700;&#x8981;&#x5F81;&#x96C6;&#x4E00;&#x4E2A;&#x56E2;&#x961F;&#x3002;&#x6211;&#x9700;&#x8981;&#x5F81;&#x96C6;&#x90A3;&#x4E9B;&#x613F;&#x610F;&#x5E76;&#x4E14;&#x6709;&#x80FD;&#x529B;&#x6295;&#x5165;&#x65F6;&#x95F4;&#x63A8;&#x52A8; shell &#x53D1;&#x5C55;&#x5411;&#x524D;&#x7684;&#x4EBA;&#x4EEC;&#x3002;</p>
+<p><strong>00:25:46 - Saron Yitbarek</strong>&#xFF1A;</p>
+<p>Bash&#xFF0C;&#x8FD9;&#x6B3E;&#x518D;&#x6B21;&#x964D;&#x751F;&#x7684; shell &#x660E;&#x5E74;&#x5C06;&#x8FCE;&#x6765; 30 &#x5C81;&#xFF08;LCTT &#x8BD1;&#x6CE8;&#xFF1A;Bash &#x53D1;&#x5E03;&#x4E8E; 1989 &#x5E74;&#xFF0C;&#x81F3;&#x672C;&#x8BD1;&#x6587;&#x53D1;&#x8868;&#x65F6;&#xFF0C;&#x5DF2;&#x7ECF; 31 &#x5C81;&#x4E86;&#xFF09;&#xFF0C;&#x5E76;&#x4E14;&#x6CA1;&#x6709;&#x8870;&#x8001;&#x7684;&#x8FF9;&#x8C61;&#x3002;Bash &#x4E58;&#x7740;&#x81EA;&#x7531;&#x8F6F;&#x4EF6;&#x6D6A;&#x6F6E;&#xFF0C;&#x7136;&#x540E;&#x662F;&#x5F00;&#x6E90;&#x6D6A;&#x6F6E;&#xFF0C;&#x76F4;&#x5230;&#x4F20;&#x64AD;&#x81F3;&#x7F16;&#x7A0B;&#x4E16;&#x754C;&#x7684;&#x6BCF;&#x4E2A;&#x89D2;&#x843D;&#x3002;&#x4F46;&#x66FE;&#x7ECF;&#xFF0C;&#x5B83;&#x53EA;&#x662F;&#x5B58;&#x50A8;&#x5728; Brian Fox &#x6C7D;&#x8F66;&#x540E;&#x5907;&#x7BB1;&#x91CC;&#x78C1;&#x5E26;&#x4E0A;&#x7684;&#x4EE3;&#x7801;&#x3002;&#x5B83;&#x53EA;&#x662F;&#x4E00;&#x4E9B;&#x7A0B;&#x5E8F;&#x5458;&#xFF0C;&#x60F3;&#x8981;&#x5E26;&#x7ED9;&#x5927;&#x5BB6;&#x7684; shell &#x8BED;&#x8A00;&#x3002;&#x51E0;&#x4E4E;&#x5076;&#x7136;&#x7684;&#xFF0C;Brian Fox &#x5728;&#x6B64;&#x8FC7;&#x7A0B;&#x4E2D;&#x6210;&#x4E3A;&#x4E86;&#x4E00;&#x540D;&#x4F1F;&#x5927;&#x7684;&#x4EE3;&#x7801;&#x82F1;&#x96C4;&#x3002;</p>
+<p><strong>00:26:23</strong>&#xFF1A;</p>
+<p>&#x987A;&#x4FBF;&#x8BF4;&#x4E00;&#x53E5;&#xFF0C;&#x6709;&#x4E9B;&#x4E8B;&#x60C5;&#x59CB;&#x7EC8;&#x56F0;&#x6270;&#x7740;&#x6211;&#xFF0C; Brian Fox &#x9A71;&#x8F66;&#x5C06;&#x6240;&#x6709; Bash &#x4EE3;&#x7801;&#x8F7D;&#x5230;&#x4E86; Santa Barbara&#x3002;&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x8F6C;&#x79FB;&#x5462;&#xFF1F;&#x6211;&#x7684;&#x610F;&#x601D;&#x662F;&#xFF0C;&#x4ED6;&#x5728;&#x67D0;&#x5BB6;&#x79D1;&#x6280;&#x516C;&#x53F8;&#x627E;&#x5230;&#x4E86;&#x65B0;&#x5DE5;&#x4F5C;&#x5417;&#xFF1F;</p>
+<p><strong>00:26:34 - Brian Fox</strong>&#xFF1A;</p>
+<p>&#x6211;&#x60F3;&#x8981;&#x7EE7;&#x7EED;&#x6211;&#x7684;&#x97F3;&#x4E50;&#x751F;&#x6DAF;&#xFF0C;&#x800C;&#x6211;&#x8BA4;&#x4E3A;&#x505A;&#x5230;&#x8FD9;&#x4E00;&#x70B9;&#x7684;&#x6700;&#x4F73;&#x53BB;&#x5904;&#x5C31;&#x662F;&#x6C14;&#x6E29;&#x603B;&#x5728; 72 &#x534E;&#x6C0F;&#x5EA6;&#x5DE6;&#x53F3;&#x3001;&#x5929;&#x7A7A;&#x6CA1;&#x6709;&#x4E4C;&#x4E91;&#x3001;&#x6D77;&#x6EE9;&#x5F88;&#x7F8E;&#x7684;&#x5730;&#x65B9;&#x3002;</p>
+<p><strong>00:26:45 - Saron Yitbarek</strong>&#xFF1A;</p>
+<p>&#x5F88;&#x597D;&#xFF0C;&#x6211;&#x66F4;&#x559C;&#x6B22;&#x8FD9;&#x4E2A;&#x7406;&#x7531;&#x3002;</p>
+<p><strong>00:26:49</strong>&#xFF1A;</p>
+<p>&#x73B0;&#x5728;&#x8BA9;&#x6211;&#x4EEC;&#x5411; Wayne A. Lee &#x81F4;&#x656C;&#xFF0C;&#x662F;&#x4ED6;&#x5411;&#x6211;&#x4EEC;&#x5EFA;&#x8BAE;&#x4E86;&#x8FD9;&#x4E00;&#x96C6;&#x6807;&#x9898;&#x300A;Bash Shell &#x4E2D;&#x7684;&#x82F1;&#x96C4;&#x300B;&#x3002;&#x5E72;&#x5F97;&#x597D;&#xFF0C;Wayne&#x3002;</p>
+<p><strong>00:26:57</strong>&#xFF1A;</p>
+<p>&#x5728;&#x4E0B;&#x4E00;&#x96C6;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5BF9;&#x4E8E;&#x81EA;&#x52A8;&#x5316;&#x7684;&#x5174;&#x8DA3;&#xFF0C;&#x5C06;&#x63D0;&#x5347;&#x5230;&#x4E00;&#x4E2A;&#x5168;&#x65B0;&#x7684;&#x9AD8;&#x5EA6;&#xFF0C;&#x5E76;&#x4E14;&#x7740;&#x773C;&#x4E8E; AI &#x8BED;&#x8A00;&#xFF0C;&#x7279;&#x522B;&#x662F; John McCarthy &#x521B;&#x9020;&#x7684; LISP&#x3002;</p>
+<p><strong>00:27:11</strong>&#xFF1A;</p>
+<p>&#x300A;&#x4EE3;&#x7801;&#x82F1;&#x96C4;&#x300B;&#x662F; Red Hat &#x7684;&#x539F;&#x521B;&#x64AD;&#x5BA2;&#x8282;&#x76EE;&#x3002;&#x5982;&#x679C;&#x4F60;&#x8BBF;&#x95EE;&#x8282;&#x76EE;&#x7684;&#x7F51;&#x7AD9; <a href="../../../../../www.redhat.com/en/command-line-heroes">redhat.com/commandlineheroes</a>&#xFF0C;&#x4F60;&#x5C06;&#x66F4;&#x6DF1;&#x5165;&#x4E86;&#x89E3;&#x5230;&#x6709;&#x5173; Bash &#x6216;&#x662F;&#x6211;&#x4EEC;&#x672C;&#x5B63;&#x6240;&#x4ECB;&#x7ECD;&#x7684;&#x4EFB;&#x4F55;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x7684;&#x6545;&#x4E8B;&#x3002;</p>
+<p><strong>00:27:28 - Saron Yitbarek</strong>&#xFF1A;</p>
+<p>&#x6211;&#x662F; Saron Yitbarek&#x3002;&#x4E0B;&#x671F;&#x4E4B;&#x524D;&#xFF0C;&#x575A;&#x6301;&#x7F16;&#x7A0B;&#x3002;</p>
+<blockquote>
+<p><strong>&#x4EC0;&#x4E48;&#x662F; LCTT SIG &#x548C; LCTT LCRH SIG</strong></p>
+<p>LCTT SIG &#x662F; LCTT <ruby>&#x7279;&#x522B;&#x5174;&#x8DA3;&#x5C0F;&#x7EC4;<rt>Special Interest Group</rt></ruby>&#xFF0C;LCTT SIG &#x662F;&#x9488;&#x5BF9;&#x7279;&#x5B9A;&#x9886;&#x57DF;&#x3001;&#x7279;&#x5B9A;&#x5185;&#x5BB9;&#x7684;&#x7FFB;&#x8BD1;&#x5C0F;&#x7EC4;&#xFF0C;&#x7FFB;&#x8BD1;&#x7EC4;&#x6210;&#x5458;&#x5C06;&#x9075;&#x5FAA; LCTT &#x6D41;&#x7A0B;&#x548C;&#x89C4;&#x8303;&#xFF0C;&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;&#xFF0C;&#x5E76;&#x83B7;&#x5F97;&#x76F8;&#x5E94;&#x7684;&#x5956;&#x52B1;&#x3002;LCRH SIG &#x662F; LCTT &#x8054;&#x5408;&#x7EA2;&#x5E3D;&#xFF08;Red Hat&#xFF09;&#x53D1;&#x8D77;&#x7684; SIG&#xFF0C;&#x5F53;&#x524D;&#x4E13;&#x6CE8;&#x4EFB;&#x52A1;&#x662F;&#x300A;&#x4EE3;&#x7801;&#x82F1;&#x96C4;&#x300B;&#x7CFB;&#x5217;&#x64AD;&#x5BA2;&#x7684;&#x811A;&#x672C;&#x6C49;&#x5316;&#xFF0C;&#x5DF2;&#x6709;&#x6570;&#x5341;&#x4F4D;&#x8D21;&#x732E;&#x8005;&#x52A0;&#x5165;&#x3002;&#x656C;&#x8BF7;&#x6BCF;&#x5468;&#x4E09;&#x3001;&#x5468;&#x4E94;&#x671F;&#x5F85;&#x7ECF;&#x8FC7;&#x6211;&#x4EEC;&#x7CBE;&#x5FC3;&#x7FFB;&#x8BD1;&#x3001;&#x6821;&#x5BF9;&#x548C;&#x53D1;&#x5E03;&#x7684;&#x8BD1;&#x6587;&#x3002;</p>
+<p>&#x6B22;&#x8FCE;<a href="https://linux.cn/article-12436-1.html" target="_blank">&#x52A0;&#x5165; LCRH SIG</a> &#x4E00;&#x540C;&#x53C2;&#x4E0E;&#x8D21;&#x732E;&#xFF0C;&#x5E76;&#x9886;&#x53D6;&#x7EA2;&#x5E3D;&#xFF08;Red Hat&#xFF09;&#x548C;&#x6211;&#x4EEC;&#x8054;&#x5408;&#x9881;&#x53D1;&#x7684;&#x4E13;&#x5C5E;&#x8D21;&#x732E;&#x8005;&#x8BC1;&#x4E66;&#x3002;</p>
+</blockquote>
+<hr>
+<p>via: <a href="https://www.redhat.com/en/command-line-heroes/season-3/heroes-in-a-bash-shell" target="_blank">https://www.redhat.com/en/command-line-heroes/season-3/heroes-in-a-bash-shell</a></p>
+<p>&#x4F5C;&#x8005;&#xFF1A;<a href="https://www.redhat.com/en/command-line-heroes" target="_blank">Red Hat</a>
+&#x9009;&#x9898;&#xFF1A;<a href="https://github.com/bestony" target="_blank">bestony</a>
+&#x8BD1;&#x8005;&#xFF1A;<a href="https://github.com/JonnieWayy" target="_blank">JonnieWayy</a>
+&#x6821;&#x5BF9;&#xFF1A;<a href="https://github.com/acyanbird" target="_blank">acyanbird</a>, <a href="https://github.com/wxy" target="_blank">wxy</a></p>
+<p>&#x672C;&#x6587;&#x7531; <a href="https://github.com/LCTT/LCRH" target="_blank">LCRH</a> &#x539F;&#x521B;&#x7F16;&#x8BD1;&#xFF0C;<a href="https://linux.cn/" target="_blank">Linux&#x4E2D;&#x56FD;</a> &#x8363;&#x8A89;&#x63A8;&#x51FA;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="05-command-line-heroes-season-3-the-infrastructure-effect.html" class="navigation navigation-prev " aria-label="Previous page: 05 基础设施的影响">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="07-command-line-heroes-season-3-talking-to-machines.html" class="navigation navigation-next " aria-label="Next page: 07 与机器对话">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"06 Bash Shell 中的英雄","level":"1.5.6","depth":2,"next":{"title":"07 与机器对话","level":"1.5.7","depth":2,"path":"《代码英雄》第三季/07-command-line-heroes-season-3-talking-to-machines.md","ref":"《代码英雄》第三季/07-command-line-heroes-season-3-talking-to-machines.md","articles":[]},"previous":{"title":"05 基础设施的影响","level":"1.5.5","depth":2,"path":"《代码英雄》第三季/05-command-line-heroes-season-3-the-infrastructure-effect.md","ref":"《代码英雄》第三季/05-command-line-heroes-season-3-the-infrastructure-effect.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"《代码英雄》第三季/06-command-line-heroes-season-3-heroes-in-a-bash-shell.md","mtime":"2021-06-14T12:22:50.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-06-17T08:13:26.755Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
