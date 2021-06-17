@@ -5,3 +5,6 @@
 /sources/
 /script/
 /translated/
+/_book
+*.pdf
+*.sh
