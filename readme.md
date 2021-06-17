@@ -1,4 +1,4 @@
-# LCRH - LCTT SIG For CommandLineHeroes
+# readme
 
 ![](https://postimg.aliavv.com/mbp/b5cks.jpg)
 
@@ -11,4 +11,6 @@
 请阅读 [WIKI](https://lctt.github.io/wiki/)。如需要协助，请在群内发问。
 
 ## LICENSE
+
 see [LICENSE](LICENSE)
+
