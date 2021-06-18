@@ -1,0 +1,10 @@
+# Mac_Meta 
+.DS_Store
+
+#package
+/sources/
+/script/
+/translated/
+/_book
+*.pdf
+*.sh
