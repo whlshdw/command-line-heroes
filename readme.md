@@ -1,6 +1,6 @@
 
 
-# LCRH - LCTT SIG For Command Line Heroes
+# LCRH - LCTT SIG For CommandLineHeroes
 
 ## LCRH - LCTT SIG For Command Line Heroes
 
