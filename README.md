@@ -59,4 +59,4 @@
 请阅读 [WIKI](https://lctt.github.io/wiki/)。如需要协助，请在群内发问。
 
 ## LICENSE
-see [LICENSE](LICENSE)
+see [LICENSE](https://github.com/whlshdw/command-line-heroes/blob/2ef0a5f5a92e59433f60a104eb18e8a39e16dd80/LICENSE)
