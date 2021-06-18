@@ -37,5 +37,5 @@
 	* [03 个人计算机 —— Altair 8800 和革命的曙光](《代码英雄》第四季/03-command-line-heroes-season-4-personal-computers-the-altair-8800-and-the-dawn-of-a-revolution.md)
 	* [04 软盘 —— 改变世界的磁盘](《代码英雄》第四季/04-command-line-heroes-season-4-floppies-the-disks-that-changed-the-world.md)
 	
-*  [文章下载](Download.md)
+*  [《代码英雄》PDF下载](Download.md)
 
