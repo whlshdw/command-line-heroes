@@ -2,8 +2,6 @@
 
 # LCRH - LCTT SIG For CommandLineHeroes
 
-## LCRH - LCTT SIG For Command Line Heroes
-
 ![](https://postimg.aliavv.com/mbp/b5cks.jpg)
 
 
